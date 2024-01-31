@@ -23,7 +23,7 @@ const Footer = (props: Props) => {
           {"On s'occupe de l'infrastructure et vous vous occupez de vos projets"}
         </p>
       </div>
-      <p className="flex items-center items-center justify-center py-8">
+      <p className="flex items-center justify-center py-8">
         <Link
           href="#hero"
           className={`${montserrat.className} text-center hover:text-gray-800 hover:bg-slate-300 text-2xl font-bold py-3 mx-4 md:mx-0 md:py-6 md:px-20 border border-slate-300 rounded-md flex flex-col items-center`}
