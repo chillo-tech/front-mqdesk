@@ -19,7 +19,7 @@ function CommentCaMarche({}: Props) {
         {CCM.map((item) => (
           <div key={item.label} className='bg-white grid grid-cols-5 rounded-xl'>
             <div className="image relative h-42 col-span-2">
-              <Image alt={`MQDesk ${item.label} ${item.descriptionOne} ${item.descriptionTwo}`} fill={true} src={item.image} objectFit="contain" fill={true} />
+              <Image alt={`MQDesk ${item.label} ${item.descriptionOne} ${item.descriptionTwo}`} fill={true} src={item.image} objectFit="contain"/>
             </div>
             <div className={`mb-3 text-center col-span-3 h-full`}>
               <div className="pt-6 px-3 pb-4">
