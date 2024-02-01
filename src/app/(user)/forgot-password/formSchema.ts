@@ -1,5 +1,5 @@
 import * as yup from "yup";
 
-export const signInSchema = yup.object().shape({
+export const forgotPasswordSchema = yup.object().shape({
   email: yup.string().email().required(),
 });

@@ -13,18 +13,19 @@ export const useContacUs = () => {
 
   const mutation = useMutation(contacUs);
   async function contacUs(obj: any) {
-    const res = await axios.post("/api/backend/contacUs/register", obj);
+    const res = await axios.post("/api/backend/contac-us", obj);
   }
 
   useEffect(() => {
     setData({
       leftComponent: {
-        description: ``,
-        title: ``,
+        description: `Obtenez de l'aide pour démarrer, configurez une démo ou trouvez le plan adapté à votre entreprise.`,
+        title: `Discutez avec notre équipe`,
+        displayImage: true,
       },
       metaData: {
-        description: "",
-        title: "",
+        description: "powered by chillo.tech",
+        title: "Contactez nous - MQ Desk",
       },
     });
   }, [setData]);

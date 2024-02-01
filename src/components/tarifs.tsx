@@ -31,7 +31,7 @@ function Tarifs({}: Props) {
                 </p>
                 <div className="flex flex-col items-center">
                   <Link
-                    href="/inscription"
+                    href="/sign-up"
                     className="block bg-app-blue text-slate-50 text-lg md:text-lg front-bolder py-4 md:px-4 px-2 rounded-full text-center"
                   >
                     Utiliser(Gratuitement) RabbitMQ
@@ -62,7 +62,7 @@ function Tarifs({}: Props) {
       </div>
       <div className="container flex items-center justify-center">
         <Link
-          href="/inscription"
+          href="/sign-up"
           className="block bg-app-blue text-slate-50 text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
         >
           Utiliser(Gratuitement) RabbitMQ

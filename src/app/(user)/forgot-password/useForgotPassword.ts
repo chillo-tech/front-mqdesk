@@ -6,32 +6,25 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { ApplicationContext } from "../ApplicationContext";
-import { signInSchema } from "./formSchema";
-
-const description = `
-  <p>
-    Sign into your account to access your dashboard.d
-  </p>
-`;
+import { forgotPasswordSchema } from "./formSchema";
 
 export const useForgotPassword = () => {
   const { setData } = useContext(ApplicationContext);
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const mutation = useMutation(signIn);
   async function signIn(obj: any) {
-    const res = await axios.post("/api/backend/login", obj);
+    const res = await axios.post("/api/backend/forgot-password", obj);
   }
 
   useEffect(() => {
     setData({
       leftComponent: {
-        description: description,
-        title: `Welcome back!`,
+        description: "Vous recevrez un nouveau mot de passe dans votre mail.",
+        title: `Récuperer un mot de passe`,
       },
       metaData: {
-        description: "",
-        title: "",
+        description: "Powered by chillo.tech",
+        title: "Mot de passe oublié - MQ Desk",
       },
     });
   }, [setData]);
@@ -42,7 +35,7 @@ export const useForgotPassword = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(signInSchema),
+    resolver: yupResolver(forgotPasswordSchema),
   });
 
   const resetAll = () => {
@@ -57,16 +50,12 @@ export const useForgotPassword = () => {
   const onInvalid = (errors: any) => console.error(errors);
 
   const onSubmit = handleSubmit(onSubmitHandler, onInvalid);
-  const handleTogglePasswordVisibility = () => {
-    setIsPasswordVisible((prev) => !prev);
-  };
+
   return {
     register,
     errors,
     onSubmit,
     mutation,
     resetAll,
-    isPasswordVisible,
-    handleTogglePasswordVisibility,
   };
 };

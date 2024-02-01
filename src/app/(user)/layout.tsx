@@ -3,8 +3,7 @@
 import React, { useContext } from "react";
 import { ApplicationContext } from "./ApplicationContext";
 import LayoutAside from "./LayoutAside";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import DarkCube from "@/components/DarkCube";
 
 export default function WrapperLayout({
   children,
@@ -13,13 +12,13 @@ export default function WrapperLayout({
 }) {
   const { data, setData } = useContext(ApplicationContext);
   return (
-    <section className="bg-gray-800 text-slate-300 md:grid md:grid-cols-12 min-h-screen justify-between relative">
-      <Header />
-      <LayoutAside data={data} />
-      <section className="md:col-span-6  flex flex-col justify-center items-center relative ">
-        {children}
-      </section>
-      <Footer />
+    <section className="relative bg-[#141412]">
+      <DarkCube style={{ position: "absolute", top: 70, right: 45 }} />
+      <DarkCube style={{ position: "absolute", bottom: 70, left: 45 }} />
+      <div className="container grid md:grid-cols-2 content-center gap-10 h-[100vh]">
+        <LayoutAside data={data} />
+        <section className="relative ">{children}</section>
+      </div>
     </section>
   );
 }

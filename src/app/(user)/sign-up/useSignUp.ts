@@ -8,42 +8,43 @@ import { useMutation } from "react-query";
 import { ApplicationContext } from "../ApplicationContext";
 import { signUpSchema } from "./formSchema";
 
+const checkIcon = `<span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="16" width="16" xmlns="http://www.w3.org/2000/svg" color="green" style="color: green;"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"></path></svg></span>`;
+const listItemStyle = `"display : flex; gap:8px; align-items:center; margin-top:8px; margin-bottom:8px"`;
 const description = `
 <p>
-  Hookdeck is the all in one platform to develop interopable event-driven applications.
+  MQ Desk est la plateforme qui vous permet d'utiliser RabbitMQ.
 </p> 
 <div>
-  <p>
-    Unified workflow from dev to prod
+  <p style=${listItemStyle}>
+    ${checkIcon}Flux de travail unifié du développement à la production
   </p>
-  <p class="sc-b574ec6d-0 kEunhi">
-    Go live with asyncronous integrations fast
+  <p style=${listItemStyle}>
+    ${checkIcon}Lancez rapidement des intégrations asynchrones
   </p>
-  <p class="sc-b574ec6d-0 kEunhi">
-    Full visibility across your events
+  <p style=${listItemStyle}>
+    ${checkIcon}Visibilité complète sur vos événements
   </p>
-  <p class="sc-b574ec6d-0 kEunhi">
-    Recover from errors without missing a beat
+  <p style=${listItemStyle}>
+    ${checkIcon}Récupérez des erreurs sans rien manquer
   </p>
 </div>`;
 
 export const useSignUp = () => {
   const { setData } = useContext(ApplicationContext);
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const mutation = useMutation(signUp);
   async function signUp(obj: any) {
-    const res = await axios.post("/api/backend/signUp/register", obj);
+    const res = await axios.post("/api/backend/sign-up", obj);
   }
 
   useEffect(() => {
     setData({
       leftComponent: {
         description: description,
-        title: `Create your account`,
+        title: `Créez votre compte`,
       },
       metaData: {
-        description: "",
-        title: "",
+        description: "Powered by chillo.tech",
+        title: "Sign in - MQ Desk",
       },
     });
   }, [setData]);
@@ -70,16 +71,12 @@ export const useSignUp = () => {
 
   const onSubmit = handleSubmit(onSubmitHandler, onInvalid);
 
-  const handleTogglePasswordVisibility = () => {
-    setIsPasswordVisible((prev) => !prev);
-  };
+  
   return {
     register,
     errors,
     onSubmit,
     mutation,
     resetAll,
-    isPasswordVisible,
-    handleTogglePasswordVisibility,
   };
 };

@@ -6,22 +6,15 @@ import { ScaleLoader } from "react-spinners";
 import { useForgotPassword } from "./useForgotPassword";
 
 const Home = () => {
-  const {
-    register,
-    onSubmit,
-    errors,
-    mutation,
-    resetAll,
-    handleTogglePasswordVisibility,
-    isPasswordVisible,
-  } = useForgotPassword();
+  const { register, onSubmit, errors, mutation, resetAll } =
+    useForgotPassword();
   return (
     <>
       <div className="container px-5 py-5 ">
         <form
           onSubmit={onSubmit}
           className={
-            "flex relative flex-col gap-2 font-light infos my-3 bg-slate-200 py-3 rounded-mdd px-3 md:px-10 md:text-lg rounded-md text-blue-900"
+            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-[#1b1b19] border-[#292927] border-w rounded-[6px] text-white"
           }
         >
           {mutation.isError || mutation.isSuccess ? (
@@ -39,15 +32,15 @@ const Home = () => {
               ) : null}
               <div className="">
                 <p className="mb-2 font-black text-2xl text-center mt-2">
-                  Nouveau ? Inscrivez vous!
+                  Mot de passe oublie?
                 </p>
               </div>
 
               {/* email */}
-              <div className="flex flex-col text-xl">
+              <div className="flex flex-col">
                 <label>Votre email</label>
                 <input
-                  className="p-2 text-black rounded-md text-xl my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2"
                   type="email"
                   {...register("email")}
                   placeholder="Entrez votre email"
@@ -59,16 +52,14 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col text-xl my-3">
+              <div className="flex flex-col my-3">
                 <button
                   type="submit"
                   className={
-                    "text-center px-2 flex mx-auto h-fit py-2 mt-1 justify-items-center justify-center items-center bg-blue-600 shadow-sm rounded-lg md:w-full w-fit"
+                    "text-center px-2 text-md flex mx-auto h-fit py-2 mt-1 justify-items-center justify-center items-center bg-blue-600 shadow-sm rounded-lg md:w-full w-fit"
                   }
                 >
-                  <span className="font-extralight text-xl text-white ">
-                    Retrieve password
-                  </span>
+                  <span className="font-extralight text-white ">Envoyer</span>
                 </button>
               </div>
             </>

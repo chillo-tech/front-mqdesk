@@ -33,7 +33,7 @@ function CommentCaMarche({}: Props) {
       </div>
       <div className="container flex items-center justify-center">
         <Link
-          href="/inscription"
+          href="/sign-up"
           className="block bg-app-blue text-slate-50 text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
         >
           Utiliser(Gratuitement) RabbitMQ

@@ -5,6 +5,7 @@ type DataType = {
   };
   leftComponent: {
     title: string;
+    displayImage?: boolean;
     description: string;
   };
 };

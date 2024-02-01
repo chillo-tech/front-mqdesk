@@ -6,7 +6,7 @@ interface Props {}
 
 const Footer = (props: Props) => {
   return (
-    <footer className="col-span-12 bg-gray-800 text-slate-300 pb-20 pt-10">
+    <footer className="border-t border-slate-300 col-span-12 bg-gray-800 text-slate-300 pb-20 pt-10">
       <div className="container text-center">
         <h1
           className={`${montserrat.className} text-2xl md:text-5xl font-bold mb-4 flex flex-col items-center`}

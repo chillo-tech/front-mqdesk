@@ -21,14 +21,14 @@ function Header({}: Props) {
           <Link
             key={item.label}
             href={item.path}
-            className="text-xl font-light rounded-full py-2 px-4 hover:bg-slate-100 hover:text-gray-900"
+            className="text-xl font-light rounded-full py-2 px-4 hover:bg-slate-100 text-slate-100 hover:text-gray-900"
           >
             {item.label}
           </Link>
         ))}
       </nav>
       <Link
-        href="/inscription"
+        href="/sign-up"
         className="block bg-app-blue text-slate-50 text-lg front-bolder py-2 px-6 rounded-full"
       >
         Utiliser RabbitMQ
