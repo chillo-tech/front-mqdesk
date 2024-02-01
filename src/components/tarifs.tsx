@@ -15,7 +15,7 @@ function Tarifs({}: Props) {
         </h2>
         <p className="md:text-2xl py-2">{'Choisissez un forfait qui vous convient.'}</p>
       </div>
-      <div className="container md:py-10 grid md:grid-cols-3 md:px-44">
+      <div className="container md:py-20 grid md:grid-cols-3 md:px-20">
         {TARIFS.map((item, index) => (
           <>
             <div
