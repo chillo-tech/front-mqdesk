@@ -21,6 +21,7 @@ export const FloatingFooter = (props: Props) => {
           <Link
             key={item.label}
             href={item.path}
+            scroll={false}
             className="font-extralight rounded-full py-3 px-5 hover:bg-slate-100 hover:text-gray-900"
           >
             {item.label}
