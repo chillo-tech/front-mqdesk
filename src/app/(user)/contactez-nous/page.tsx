@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Message } from "@/components/Message";
-import { useContacUs } from "./useContac-us";
+import { useContacUs } from "./useContacUs";
 import { ScaleLoader } from "react-spinners";
 import { COUNTRIES_CODES } from "@/utils/data";
 
@@ -135,9 +135,6 @@ const Home = () => {
           )}
         </form>
       </div>
-      {/* {process.env.NEXT_PUBLIC_NEWSLETTERS_ANALYTICS && (
-        <Analytics ga_id={process.env.NEXT_PUBLIC_NEWSLETTERS_ANALYTICS} />
-      )} */}
     </>
   );
 };

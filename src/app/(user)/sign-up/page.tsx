@@ -154,9 +154,6 @@ const Home = () => {
           )}
         </form>
       </div>
-      {/* {process.env.NEXT_PUBLIC_NEWSLETTERS_ANALYTICS && (
-        <Analytics ga_id={process.env.NEXT_PUBLIC_NEWSLETTERS_ANALYTICS} />
-      )} */}
     </>
   );
 };

@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Message } from "@/components/Message";
-import { useSignIn } from "./useSignIn";
-import { ScaleLoader } from "react-spinners";
-import { COUNTRIES_CODES } from "@/utils/data";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ScaleLoader } from "react-spinners";
+import { useForgotPassword } from "./useForgotPassword";
 
 const Home = () => {
   const {
@@ -15,7 +14,7 @@ const Home = () => {
     resetAll,
     handleTogglePasswordVisibility,
     isPasswordVisible,
-  } = useSignIn();
+  } = useForgotPassword();
   return (
     <>
       <div className="container px-5 py-5 ">
@@ -60,35 +59,6 @@ const Home = () => {
                 </p>
               </div>
 
-              {/* mot de passe */}
-              <div className="flex flex-col text-xl">
-                <label>Votre mot de passe</label>
-
-                <div className="relative my-2">
-                  <input
-                    className="p-2 text-black rounded-md text-xl w-full"
-                    {...register("password")}
-                    type={isPasswordVisible ? "text" : "password"}
-                    placeholder="Entrez votre mot de passe"
-                  />
-                  <div
-                    className="absolute top-[50%] translate-y-[-50%] right-3 cursor-pointer"
-                    onClick={handleTogglePasswordVisibility}
-                  >
-                    {isPasswordVisible ? (
-                      <FaEyeSlash title="hide" />
-                    ) : (
-                      <FaEye title="view" />
-                    )}
-                  </div>
-                </div>
-                <p className="text-rose-800">
-                  {errors &&
-                    errors.password &&
-                    "Veuillez nous indiquer notre mot de passe."}
-                </p>
-              </div>
-
               <div className="flex flex-col text-xl my-3">
                 <button
                   type="submit"
@@ -97,7 +67,7 @@ const Home = () => {
                   }
                 >
                   <span className="font-extralight text-xl text-white ">
-                    Sign in
+                    Retrieve password
                   </span>
                 </button>
               </div>
@@ -105,9 +75,6 @@ const Home = () => {
           )}
         </form>
       </div>
-      {/* {process.env.NEXT_PUBLIC_NEWSLETTERS_ANALYTICS && (
-        <Analytics ga_id={process.env.NEXT_PUBLIC_NEWSLETTERS_ANALYTICS} />
-      )} */}
     </>
   );
 };

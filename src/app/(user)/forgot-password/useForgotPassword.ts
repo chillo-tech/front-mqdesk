@@ -14,7 +14,7 @@ const description = `
   </p>
 `;
 
-export const useSignIn = () => {
+export const useForgotPassword = () => {
   const { setData } = useContext(ApplicationContext);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 

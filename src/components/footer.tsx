@@ -1,26 +1,28 @@
-import { montserrat } from '@/app/fonts';
-import Link from 'next/link';
-import React from 'react';
+import { montserrat } from "@/app/fonts";
+import Link from "next/link";
+import React from "react";
 
 interface Props {}
 
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-gray-800 text-slate-300 pb-20 pt-10">
+    <footer className="col-span-12 bg-gray-800 text-slate-300 pb-20 pt-10">
       <div className="container text-center">
         <h1
           className={`${montserrat.className} text-2xl md:text-5xl font-bold mb-4 flex flex-col items-center`}
         >
-          <span>{'Votre cluster RabitMQ est'}</span>
-          <span>{'entre de bonnes avec nous.'}</span>
+          <span>{"Votre cluster RabitMQ est"}</span>
+          <span>{"entre de bonnes avec nous."}</span>
         </h1>
         <p className="text-md md:text-xl py-1 font-light">
           {
-            'Découvrez comment vous et votre équipe pouvez profiter de notre infrastructure et faire avancer vos projets.'
+            "Découvrez comment vous et votre équipe pouvez profiter de notre infrastructure et faire avancer vos projets."
           }
         </p>
         <p className="text-md md:text-xl py-1 font-light">
-          {"On s'occupe de l'infrastructure et vous vous occupez de vos projets"}
+          {
+            "On s'occupe de l'infrastructure et vous vous occupez de vos projets"
+          }
         </p>
       </div>
       <p className="flex items-center justify-center py-8">
@@ -61,7 +63,9 @@ const Footer = (props: Props) => {
           <div className="row">
             <div className="col-md-12 text-center pt-3 pb-3">
               <hr />
-              <p className="mb-0 pt-4">&copy; Copyright {new Date().getFullYear()} MQDesk.io.</p>
+              <p className="mb-0 pt-4">
+                &copy; Copyright {new Date().getFullYear()} MQDesk.io.
+              </p>
             </div>
           </div>
         </div>

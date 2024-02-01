@@ -1,12 +1,15 @@
-import { MENUS } from '@/utils';
-import Link from 'next/link';
-import React from 'react';
+import { MENUS } from "@/utils";
+import Link from "next/link";
+import React from "react";
 
 type Props = {};
 
 function Header({}: Props) {
   return (
-    <header id="hero" className="py-3 md:py-0 flex items-center justify-between w-full container">
+    <header
+      id="hero"
+      className="col-span-12 py-3 md:py-0 flex items-center justify-between w-full container"
+    >
       <Link
         href="/"
         className="px-1 md:px-0 py-2 inline-block text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200"
