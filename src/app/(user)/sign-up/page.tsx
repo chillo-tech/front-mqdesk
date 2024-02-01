@@ -4,9 +4,18 @@ import { Message } from "@/components/Message";
 import { useSignUp } from "./useSignUp";
 import { ScaleLoader } from "react-spinners";
 import { COUNTRIES_CODES } from "@/utils/data";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Home = () => {
-  const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
+  const {
+    register,
+    onSubmit,
+    errors,
+    mutation,
+    resetAll,
+    handleTogglePasswordVisibility,
+    isPasswordVisible,
+  } = useSignUp();
   return (
     <>
       <div className="container px-5 py-5 ">
@@ -68,6 +77,34 @@ const Home = () => {
                 </p>
               </div>
 
+              {/* mot de passe */}
+              <div className="flex flex-col text-xl">
+                <label>Votre mot de passe</label>
+
+                <div className="relative my-2">
+                  <input
+                    className="p-2 text-black rounded-md text-xl w-full"
+                    {...register("password")}
+                    type={isPasswordVisible ? "text" : "password"}
+                    placeholder="Entrez votre mot de passe"
+                  />
+                  <div
+                    className="absolute top-[50%] translate-y-[-50%] right-3 cursor-pointer"
+                    onClick={handleTogglePasswordVisibility}
+                  >
+                    {isPasswordVisible ? (
+                      <FaEyeSlash title="hide" />
+                    ) : (
+                      <FaEye title="view" />
+                    )}
+                  </div>
+                </div>
+                <p className="text-rose-800">
+                  {errors &&
+                    errors.password &&
+                    "Veuillez nous indiquer notre mot de passe."}
+                </p>
+              </div>
               {/* index telephonique */}
               <div className="flex flex-col">
                 <label>
