@@ -27,7 +27,7 @@ const Footer = (props: Props) => {
       </div>
       <p className="flex items-center justify-center py-8">
         <Link
-          href="#hero"
+          href="/sign-up"
           className={`${montserrat.className} text-center hover:text-gray-800 hover:bg-slate-300 text-2xl font-bold py-3 mx-4 md:mx-0 md:py-6 md:px-20 border border-slate-300 rounded-md flex flex-col items-center`}
         >
           Utiliser(Gratuitement) RabbitMQ
@@ -47,13 +47,13 @@ const Footer = (props: Props) => {
           <Link href="/" className="px-2">
             Prix
           </Link>
-          <Link href="/" className="px-2">
+          <Link href="/sign-up" className="px-2">
             Commencer
           </Link>
           <Link href="/" className="px-2">
             Support
           </Link>
-          <Link href="/contact" className="px-2">
+          <Link href="/contactez-nous" className="px-2">
             Contact
           </Link>
         </div>

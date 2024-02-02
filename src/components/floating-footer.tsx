@@ -36,10 +36,7 @@ export const FloatingFooter = (props: Props) => {
             <button
               type="button"
               key={item.label}
-              onClick={(e) => {
-                router.push(item.path);
-                scrollToId(item.path)(e);
-              }}
+              onClick={scrollToId(item.path)}
               className={`font-extralight rounded-full py-3 px-5 ${
                 actualLink === item.path ? "bg-slate-100 text-gray-900" : ""
               } hover:bg-slate-100 hover:text-gray-900`}
