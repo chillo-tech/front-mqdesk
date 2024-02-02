@@ -12,6 +12,7 @@ const default_description =
 const default_title = "MQ Desk: rabbitmq hébergé pour vos applications";
 
 
+
 export default function RootLayout({
   children,
 }: {
@@ -30,7 +31,10 @@ export default function RootLayout({
               content={data.metaData.description || default_description}
             />
           </head>
-          <body className={`${pjs.className} scroll-smooth  font-sans`}>
+          <body
+            className={`${pjs.className} scroll-smooth  font-sans`}
+            onScroll={e => console.log('scroll')}
+          >
             {children}
           </body>
         </ApplicationContext.Provider>

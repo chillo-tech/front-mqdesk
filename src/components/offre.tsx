@@ -1,17 +1,25 @@
-import { montserrat } from '@/app/fonts';
-import { OFFRES } from '@/utils';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { montserrat } from "@/app/fonts";
+import useSetScrolltag from "@/hooks/useSetScrolltag";
+import { OFFRES } from "@/utils";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 interface Props {}
 
 function Offre(props: Props) {
+  const { containerRef } = useSetScrolltag();
   return (
-    <section id="tarifs" className="py-10 md:py-20 text-lg text-light">
+    <section
+      id="tarifs"
+      className="py-10 md:py-20 text-lg text-light"
+      ref={containerRef}
+    >
       <div className="container text-center">
-        <h2 className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}>
-          {'Notre offre'}
+        <h2
+          className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}
+        >
+          {"Notre offre"}
         </h2>
       </div>
       <div className="container md:py-10 grid md:grid-cols-3 gap-4">
@@ -23,12 +31,18 @@ function Offre(props: Props) {
                 src={item.image}
                 width={200}
                 height={200}
-                className='rounded-full'
+                className="rounded-full"
               />
             </div>
-            <div className={`mb-3 text-center col-span-3 h-full flex items-center`}>
+            <div
+              className={`mb-3 text-center col-span-3 h-full flex items-center`}
+            >
               <div className="pt-6 px-3 pb-4">
-                <h3 className={`${montserrat.className} text-2xl font-bold mb-3`}>{item.label}</h3>
+                <h3
+                  className={`${montserrat.className} text-2xl font-bold mb-3`}
+                >
+                  {item.label}
+                </h3>
                 <p className="text-sm">{item.descriptionOne}</p>
               </div>
             </div>

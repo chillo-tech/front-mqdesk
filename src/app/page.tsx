@@ -1,3 +1,4 @@
+"use client";
 import AvisRecus from "@/components/avis-recus";
 import Clients from "@/components/clients";
 import CommentCaMarche from "@/components/comment-ca-marche";
@@ -9,6 +10,7 @@ import Hero from "@/components/hero";
 import Offre from "@/components/offre";
 import Support from "@/components/support";
 import Tarifs from "@/components/tarifs";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col relative ">
