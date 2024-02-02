@@ -32,7 +32,7 @@ const Home = () => {
               ) : null}
               <div className="">
                 <p className="mb-2 font-black text-2xl text-center mt-2">
-                  Mot de passe oublie?
+                  Récuperer un mot de passe
                 </p>
               </div>
 
