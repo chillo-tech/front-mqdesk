@@ -35,7 +35,7 @@ const Home = () => {
                 </p>
                 <p>
                   Obtenez de l'aide pour démarrer, regarder une démo et
-                  trouver la formule adapté à votre entreprise.
+                  trouver la formule adaptée à votre entreprise.
                 </p>
               </div>
 
