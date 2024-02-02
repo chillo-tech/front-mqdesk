@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Message } from "@/components/Message";
-import { useSignUp } from "./useSignUp";
-import { ScaleLoader } from "react-spinners";
 import { COUNTRIES_CODES } from "@/utils/data";
-import { FaEye, FaEyeSlash, FaRegCheckCircle } from "react-icons/fa";
+import { ScaleLoader } from "react-spinners";
+import { useSignUp } from "./useSignUp";
 
 const Home = () => {
   const {
