@@ -44,7 +44,7 @@ export const FloatingFooter = (props: Props) => {
             </Link>
           ))}
           <Link
-            href="/"
+            href="/sign-up"
             className="bg-gray-700 font-extralight rounded-full py-3 px-5 hover:bg-slate-100 hover:text-gray-900"
           >
             Login
