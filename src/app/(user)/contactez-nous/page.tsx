@@ -34,8 +34,8 @@ const Home = () => {
                   Discutez avec notre équipe
                 </p>
                 <p>
-                  Obtenez de l'aide pour démarrer, configurez une démo ou
-                  trouvez la formule adapté à votre entreprise.
+                  Obtenez de l'aide pour démarrer, regarder une démo et
+                  trouver la formule adapté à votre entreprise.
                 </p>
               </div>
 
