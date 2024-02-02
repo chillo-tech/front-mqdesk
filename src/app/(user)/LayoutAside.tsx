@@ -19,7 +19,9 @@ const LayoutAside = ({ data }: { data: DataType }) => {
             src={"/MQDESK.png"}
             height={500}
             width={500}
-            objectFit="contain"
+            style={{
+              objectFit: "contain",
+            }}
           />
         ) : null}
       </div>

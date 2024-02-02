@@ -4,15 +4,10 @@ import { Message } from "@/components/Message";
 import { COUNTRIES_CODES } from "@/utils/data";
 import { ScaleLoader } from "react-spinners";
 import { useSignUp } from "./useSignUp";
+import Link from "next/link";
 
 const Home = () => {
-  const {
-    register,
-    onSubmit,
-    errors,
-    mutation,
-    resetAll
-  } = useSignUp();
+  const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
   return (
     <>
       <div className="container">
@@ -74,7 +69,6 @@ const Home = () => {
                 </p>
               </div>
 
-              
               {/* index telephonique */}
               <div className="flex flex-col">
                 <label>
@@ -107,7 +101,12 @@ const Home = () => {
                   />
                 </div>
               </div>
-
+              <Link
+                href={"/forgot-password"}
+                className="text-center text-blue-400"
+              >
+                Récuperer un mot de passe
+              </Link>
               <div className="flex flex-col my-3">
                 <button
                   type="submit"

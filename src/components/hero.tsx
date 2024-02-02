@@ -1,16 +1,19 @@
-import { montserrat } from '@/app/fonts';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { montserrat } from "@/app/fonts";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 type Props = {};
 
 function Hero({}: Props) {
   return (
     <section className="px-2 grid grid-cols-2 md:grid-cols-5 container items-center">
       <div className="md:pt-44 pt-2 md:pb-40 col-span-3">
-        <h1 className={`${montserrat.className} text-4xl md:text-6xl font-bold`}>
-          <span className="text-blue-700 mr-2">RabbitMQ</span> {'hébergé'} <br />
-          {'pour tous vos projets'}
+        <h1
+          className={`${montserrat.className} text-4xl md:text-6xl font-bold`}
+        >
+          <span className="text-blue-700 mr-2">RabbitMQ</span> {"hébergé"}{" "}
+          <br />
+          {"pour tous vos projets"}
         </h1>
         <p className="mt-3 text-lg md:text-2xl">
           {"Faites communiquer vos projets on s'occupe de l'infrastructure"}
@@ -43,7 +46,16 @@ function Hero({}: Props) {
         </Link>
       </div>
       <div className="col-span-2 relative h-full py-10">
-          <Image alt="" src={'/MQDESK.png'} fill={true} objectFit='contain'/>
+        <Image
+          alt=""
+          priority
+          src={"/MQDESK.png"}
+          sizes="100%"
+          fill={true}
+          style={{
+            objectFit: "contain",
+          }}
+        />
       </div>
     </section>
   );
