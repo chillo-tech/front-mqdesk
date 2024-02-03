@@ -6,7 +6,7 @@ import { ScaleLoader } from "react-spinners";
 import { useSignUp } from "./useSignUp";
 import Link from "next/link";
 
-const Home = () => {
+const Inscription = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
   return (
     <>
@@ -127,4 +127,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Inscription;

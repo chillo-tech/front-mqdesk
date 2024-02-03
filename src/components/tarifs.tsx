@@ -15,7 +15,7 @@ function Tarifs({}: Props) {
         <h2
           className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}
         >
-          {"Une tarification transparente pour tous."}
+          {"Une tarification transparente."}
         </h2>
         <p className="md:text-2xl py-2">
           {"Choisissez un forfait qui vous convient."}

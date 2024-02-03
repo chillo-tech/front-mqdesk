@@ -45,7 +45,7 @@ function Hero({}: Props) {
           Utiliser(Gratuitement) RabbitMQ
         </Link>
       </div>
-      <div className="col-span-2 relative h-full py-10">
+      <div className="hidden md:block col-span-2 relative h-full py-10">
         <Image
           alt=""
           priority
