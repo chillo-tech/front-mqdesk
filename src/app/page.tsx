@@ -17,8 +17,10 @@ export default function Home() {
       <Header />
       <Hero />
       <Clients classes="bg-white" />
-      <Offre />
-      <CommentCaMarche />
+      <div id="avantages">
+        <Offre />
+        <CommentCaMarche />
+      </div>
       <AvisRecus />
       <Tarifs />
       <Support />

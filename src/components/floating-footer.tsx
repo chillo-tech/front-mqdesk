@@ -1,4 +1,5 @@
 "use client";
+import { useFloatingFooter } from "@/hooks/useFloatingFooter";
 import { MENUS, scrollToId } from "@/utils";
 import { Emitter } from "@/utils/EventEmitter";
 import Link from "next/link";
@@ -21,6 +22,7 @@ export const FloatingFooter = (props: Props) => {
       setActual(toSelect);
     }
   );
+  useFloatingFooter();
   return (
     <div className="floating hidden md:fixed bottom-10 text-white md:flex items-center justify-center w-full">
       <nav className="p-2 bg-gray-900 rounded-full text-lg border border-slate-500 overflow-hidden">
@@ -56,4 +58,3 @@ export const FloatingFooter = (props: Props) => {
 };
 
 export { floatingFooterEmitter, floatingFooterEmitterEvents };
-

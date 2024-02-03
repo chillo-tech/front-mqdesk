@@ -1,16 +1,13 @@
 import { montserrat } from "@/app/fonts";
-import useSetScrolltag from "@/hooks/useSetScrolltag";
 import Link from "next/link";
 import React from "react";
 
 type Props = {};
 
 function Support({}: Props) {
-  const { containerRef } = useSetScrolltag();
   return (
     <section
       id="support"
-      ref={containerRef}
       className="bg-app-blue opacity-80 py-20 md:py-20 text-white text-xl text-light text-center"
     >
       <div className="container flex flex-col items-center gap-3">

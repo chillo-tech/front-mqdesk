@@ -11,7 +11,6 @@ const MENUS = [
     label: "Avantages",
     path: "#avantages",
   },
-
   {
     header: true,
     footer: true,

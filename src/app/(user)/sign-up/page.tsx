@@ -101,12 +101,12 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <Link
-                href={"/forgot-password"}
-                className="text-center text-blue-400"
-              >
-                Récuperer un mot de passe
-              </Link>
+              <p>
+                Mot de passe oublié?{" "}
+                <Link href={"/forgot-password"} className="text-blue-400">
+                  Récuperer un mot de passe
+                </Link>
+              </p>
               <div className="flex flex-col my-3">
                 <button
                   type="submit"

@@ -1,20 +1,13 @@
 import { montserrat } from "@/app/fonts";
-import useSetScrolltag from "@/hooks/useSetScrolltag";
 import { OFFRES } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 interface Props {}
 
 function Offre(props: Props) {
-  const { containerRef } = useSetScrolltag();
   return (
-    <section
-      id="avantages"
-      className="py-10 md:py-20 text-lg text-light"
-      ref={containerRef}
-    >
+    <section className="py-10 md:py-20 text-lg text-light">
       <div className="container text-center">
         <h2
           className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}
