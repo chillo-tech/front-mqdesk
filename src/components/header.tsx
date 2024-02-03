@@ -52,7 +52,7 @@ function Header({}: Props) {
               <li className="md:hidden">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="rounded-full p-2 absolute top-[5%] border-2 border-app-black"
+                  className="rounded-full p-2 absolute left-[50%] translate-x-[-50%] top-[5%] border-2 border-app-black"
                 >
                   <RxCross1 />
                 </button>
