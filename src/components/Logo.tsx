@@ -10,6 +10,7 @@ const Logo = () => {
         sizes="100%"
         style={{
           objectFit: "contain",
+          width: "30px",
         }}
         alt="cylindre"
         height={30}

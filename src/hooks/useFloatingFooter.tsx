@@ -5,13 +5,7 @@ import {
 } from "@/components/floating-footer";
 import { useEffect, useState } from "react";
 
-const ids = [
-  "clients",
-  "avantages",
-  "avis",
-  "tarifs",
-  "support",
-];
+const ids = ["clients", "avantages", "avis", "tarifs", "support"];
 
 const useFloatingFooter = () => {
   const [sections, setSections] = useState<HTMLElement[]>();
@@ -26,24 +20,23 @@ const useFloatingFooter = () => {
       return res;
     });
   }, []);
-  //   const sections = ids.map((el) => document.getElementById(el));
-
-  window.onscroll = () => {
-    sections?.forEach((sec) => {
-      if (sec) {
-        let top = window.scrollY;
-        let offset = sec.offsetTop;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute("id");
-        if (top >= offset && top < offset + height) {
-          floatingFooterEmitter.emit(
-            floatingFooterEmitterEvents.SET_SELECTED,
-            `#${id}`
-          );
+  if (typeof window !== "undefined")
+    window.onscroll = () => {
+      sections?.forEach((sec) => {
+        if (sec) {
+          let top = window.scrollY;
+          let offset = sec.offsetTop;
+          let height = sec.offsetHeight;
+          let id = sec.getAttribute("id");
+          if (top >= offset && top < offset + height) {
+            floatingFooterEmitter.emit(
+              floatingFooterEmitterEvents.SET_SELECTED,
+              `#${id}`
+            );
+          }
         }
-      }
-    });
-  };
+      });
+    };
 };
 
 export { useFloatingFooter };
