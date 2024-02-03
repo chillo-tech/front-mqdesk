@@ -1,6 +1,5 @@
 "use client";
 import { montserrat } from "@/app/fonts";
-import useSetScrolltag from "@/hooks/useSetScrolltag";
 import { ENTREPRISES } from "@/utils";
 
 type Props = {
@@ -8,10 +7,8 @@ type Props = {
 };
 
 function Clients({ classes }: Props) {
-  const { containerRef } = useSetScrolltag();
-
   return (
-    <section className={`${classes}`} id="clients" ref={containerRef}>
+    <section className={`${classes}`} id="clients">
       <div className="container flex flex-col md:flex-row items-center md:gap-8 gap-4 md:py-10 py-6">
         <h3 className="text-lg">Ils nous font confiance</h3>
         <nav

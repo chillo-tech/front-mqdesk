@@ -1,17 +1,16 @@
-import useSetScrolltag from "@/hooks/useSetScrolltag";
+import { montserrat } from "@/app/fonts";
 import { AVIS } from "@/utils";
-import React from "react";
 
 type Props = {};
 
 function AvisRecus({}: Props) {
-  const { containerRef } = useSetScrolltag();
   return (
-    <section
-      id="avis"
-      className="py-10 md:py-10 text-lg text-light"
-      ref={containerRef}
-    >
+    <section id="avis" className="py-10 md:py-10 text-lg text-light">
+      <h2
+        className={`${montserrat.className} text-center text-2xl md:text-5xl font-bold py-6`}
+      >
+        {"Nos utilisateurs en parlent"}
+      </h2>
       <div className="container grid md:grid-cols-3 gap-6 text-md">
         {AVIS.map((item, index) => (
           <article

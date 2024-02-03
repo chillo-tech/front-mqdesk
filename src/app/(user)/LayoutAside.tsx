@@ -1,10 +1,12 @@
+import Logo from "@/components/Logo";
 import { DataType } from "@/types/WrapperContext";
 import Image from "next/image";
 
 const LayoutAside = ({ data }: { data: DataType }) => {
   return (
-    <aside className="container px-3 max-h-0 dark:text-white max-w-[500px]">
+    <aside className="container px-3 dark:text-white max-w-[500px]">
       <div className="mt-1 font-extralight infos bg--900 px-2 flex flex-col grow">
+        <Logo />
         <h2
           className="title font-extrabold text-3xl md:text-3xl"
           dangerouslySetInnerHTML={{ __html: data?.leftComponent?.title }}
@@ -18,9 +20,11 @@ const LayoutAside = ({ data }: { data: DataType }) => {
             alt="mqdesk"
             src={"/MQDESK.png"}
             priority
-            height={500}
-            width={500}
+            height={400}
+            width={400}
+            className="hidden md:block"
             style={{
+              margin: "4px auto",
               objectFit: "contain",
             }}
           />

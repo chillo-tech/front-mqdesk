@@ -6,7 +6,7 @@ import { ScaleLoader } from "react-spinners";
 import { useSignUp } from "./useSignUp";
 import Link from "next/link";
 
-const Home = () => {
+const Inscription = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
   return (
     <>
@@ -101,12 +101,12 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <Link
-                href={"/forgot-password"}
-                className="text-center text-blue-400"
-              >
-                Récuperer un mot de passe
-              </Link>
+              <p>
+                Mot de passe oublié?{" "}
+                <Link href={"/forgot-password"} className="text-blue-400">
+                  Récuperer un mot de passe
+                </Link>
+              </p>
               <div className="flex flex-col my-3">
                 <button
                   type="submit"
@@ -127,4 +127,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Inscription;

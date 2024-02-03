@@ -1,19 +1,15 @@
 import { montserrat } from "@/app/fonts";
-import useSetScrolltag from "@/hooks/useSetScrolltag";
 import { CCM } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 type Props = {};
 
 function CommentCaMarche({}: Props) {
-  const { containerRef } = useSetScrolltag();
   return (
     <section
       id="how-it-works"
       className="bg-gray-200 py-10 md:py-20 text-lg text-light"
-      ref={containerRef}
     >
       <div className="container text-center">
         <h2

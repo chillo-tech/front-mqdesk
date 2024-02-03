@@ -6,7 +6,7 @@ const TARIFS = [
     price: "Gratuit",
     content: [
       {
-        label: "Max 1000 queues"
+        label: "Max 100 queues"
       },
       {
         label: "Max 100 messages par queue"
@@ -26,16 +26,19 @@ const TARIFS = [
     price: "Fonction du besoin",
     content: [
       {
-        label: "Max 1000 queues"
+        label: "Aucune lime pour les queues"
       },
       {
-        label: "Max 100 messages par queue"
+        label: "Aucune lime pour les messages par queue"
       },
       {
         label: "Interface utilisateur"
       },
       {
         label: "Support par mail"
+      },
+      {
+        label: "Support par téléphone"
       }
     ]
   }
