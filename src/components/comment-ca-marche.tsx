@@ -10,7 +10,11 @@ type Props = {};
 function CommentCaMarche({}: Props) {
   const { containerRef } = useSetScrolltag();
   return (
-    <section id="how-it-works" className="bg-gray-200 py-10 md:py-20 text-lg text-light" ref={containerRef}>
+    <section
+      id="how-it-works"
+      className="bg-gray-200 py-10 md:py-20 text-lg text-light"
+      ref={containerRef}
+    >
       <div className="container text-center">
         <h2
           className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}
