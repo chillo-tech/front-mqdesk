@@ -1,5 +1,6 @@
 on:
   workflow_dispatch:
+  push:
 env:
   NODE_VERSION: '20.x'
   FOLDER: /opt/applications/mqdesk/front-mqdesk
