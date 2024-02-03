@@ -24,7 +24,7 @@ function Header({}: Props) {
             key={item.label}
             href={item.path}
             onClick={scrollToId(item.path)}
-            className="text-xl font-light rounded-full py-2 px-4 hover:bg-slate-100 text-slate-100 hover:text-gray-900"
+            className="text-xl font-light rounded-full py-2 px-4 hover:bg-slate-100 hover:text-gray-900"
           >
             {item.label}
           </Link>
