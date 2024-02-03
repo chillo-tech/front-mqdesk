@@ -14,7 +14,7 @@ const Home = () => {
         <form
           onSubmit={onSubmit}
           className={
-            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-[#1b1b19] border-[#292927] border-w rounded-[6px] text-white"
+            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-white border-[#292927] border-w rounded-[6px]"
           }
         >
           {mutation.isError || mutation.isSuccess ? (
@@ -40,7 +40,7 @@ const Home = () => {
               <div className="flex flex-col">
                 <label>Votre email</label>
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
                   type="email"
                   {...register("email")}
                   placeholder="Entrez votre email"
@@ -48,7 +48,7 @@ const Home = () => {
                 <p className="text-rose-800">
                   {errors &&
                     errors.email &&
-                    "Veuillez nous indiquer notre email."}
+                    "Veuillez nous indiquer votre email."}
                 </p>
               </div>
 

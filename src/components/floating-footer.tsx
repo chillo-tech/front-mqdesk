@@ -1,5 +1,6 @@
 "use client";
-import { MENUS, scrollToId, Emitter } from "@/utils";
+import { MENUS, scrollToId } from "@/utils";
+import { Emitter } from "@/utils/EventEmitter";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";

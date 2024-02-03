@@ -13,7 +13,7 @@ import Tarifs from "@/components/tarifs";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col relative ">
+    <main className={`flex min-h-screen flex-col relative`}>
       <Header />
       <Hero />
       <Clients classes="bg-white" />

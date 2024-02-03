@@ -20,14 +20,13 @@ function Header({}: Props) {
       </Link>
       <nav className="hidden md:flex text-black">
         {MENUS.filter((item) => item.footer).map((item) => (
-          <Link
+          <button
             key={item.label}
-            href={item.path}
             onClick={scrollToId(item.path)}
             className="text-xl font-light rounded-full py-2 px-4 text-gray-900"
           >
             {item.label}
-          </Link>
+          </button>
         ))}
       </nav>
       <Link
