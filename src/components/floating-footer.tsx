@@ -2,8 +2,7 @@
 import { MENUS, scrollToId } from "@/utils";
 import { Emitter } from "@/utils/EventEmitter";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface Props {}
 
@@ -15,7 +14,6 @@ const floatingFooterEmitterEvents = {
 
 export const FloatingFooter = (props: Props) => {
   const [actualLink, setActual] = useState("");
-  const router = useRouter();
 
   floatingFooterEmitter.on(
     floatingFooterEmitterEvents.SET_SELECTED,
@@ -58,3 +56,4 @@ export const FloatingFooter = (props: Props) => {
 };
 
 export { floatingFooterEmitter, floatingFooterEmitterEvents };
+

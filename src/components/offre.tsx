@@ -11,7 +11,7 @@ function Offre(props: Props) {
   const { containerRef } = useSetScrolltag();
   return (
     <section
-      id="tarifs"
+      id="avantages"
       className="py-10 md:py-20 text-lg text-light"
       ref={containerRef}
     >

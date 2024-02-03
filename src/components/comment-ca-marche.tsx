@@ -11,7 +11,7 @@ function CommentCaMarche({}: Props) {
   const { containerRef } = useSetScrolltag();
   return (
     <section
-      id="tarifs"
+      id="how-it-works"
       className="bg-gray-200 py-10 md:py-20 text-lg text-light"
       ref={containerRef}
     >
