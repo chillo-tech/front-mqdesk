@@ -13,7 +13,7 @@ const ContactezNous = () => {
         <form
           onSubmit={onSubmit}
           className={
-            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-[#1b1b19] border-[#292927] border-w rounded-[6px] text-white"
+            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-white border-[#292927] border-w rounded-[6px]"
           }
         >
           {mutation.isError || mutation.isSuccess ? (
@@ -21,6 +21,7 @@ const ContactezNous = () => {
               isError={mutation.isError}
               isSuccess={mutation.isSuccess}
               reloadForm={resetAll}
+              canContact={false}
             />
           ) : (
             <>
@@ -34,8 +35,8 @@ const ContactezNous = () => {
                   Discutez avec notre équipe
                 </p>
                 <p>
-                  Obtenez de l'aide pour démarrer, regarder une démo et
-                  trouver la formule adaptée à votre entreprise.
+                  Obtenez de l'aide pour démarrer, regarder une démo et trouver
+                  la formule adaptée à votre entreprise.
                 </p>
               </div>
 
@@ -44,7 +45,7 @@ const ContactezNous = () => {
                 <label>Votre nom</label>
 
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
                   {...register("lastName")}
                   type="text"
                   placeholder="Entrez votre nom"
@@ -60,7 +61,7 @@ const ContactezNous = () => {
               <div className="flex flex-col ">
                 <label>Votre email</label>
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
                   type="email"
                   {...register("email")}
                   placeholder="Entrez votre email"
@@ -82,7 +83,7 @@ const ContactezNous = () => {
                 </label>
                 <div className="flex md:items-center justify-center gap-2 flex-col md:flex-row">
                   <select
-                    className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2 h-[36px] md:w-1/3 max-w-[90vw] md:max-w-full"
+                    className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-1/3 max-w-[90vw] md:max-w-full"
                     {...register("phoneIndex")}
                   >
                     <option value="">Votre pays</option>
@@ -97,7 +98,7 @@ const ContactezNous = () => {
                     ))}
                   </select>
                   <input
-                    className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2 md:w-2/3"
+                    className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-2/3"
                     {...register("phone")}
                     type="number"
                     placeholder="Entrez votre numero"
@@ -109,7 +110,7 @@ const ContactezNous = () => {
               <div className="flex flex-col">
                 <label>Votre message</label>
                 <textarea
-                  className="my-2 py-1 px-2 bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md"
+                  className="my-2 py-1 px-2 bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md"
                   {...register("message")}
                   rows={4}
                 />

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LayoutAside = ({ data }: { data: DataType }) => {
   return (
-    <aside className="container px-3 max-h-0 text-white max-w-[500px]">
+    <aside className="container px-3 max-h-0 dark:text-white max-w-[500px]">
       <div className="mt-1 font-extralight infos bg--900 px-2 flex flex-col grow">
         <h2
           className="title font-extrabold text-3xl md:text-3xl"
@@ -17,9 +17,12 @@ const LayoutAside = ({ data }: { data: DataType }) => {
           <Image
             alt="mqdesk"
             src={"/MQDESK.png"}
+            priority
             height={500}
             width={500}
-            objectFit="contain"
+            style={{
+              objectFit: "contain",
+            }}
           />
         ) : null}
       </div>

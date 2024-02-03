@@ -4,22 +4,17 @@ import { Message } from "@/components/Message";
 import { COUNTRIES_CODES } from "@/utils/data";
 import { ScaleLoader } from "react-spinners";
 import { useSignUp } from "./useSignUp";
+import Link from "next/link";
 
 const Inscription = () => {
-  const {
-    register,
-    onSubmit,
-    errors,
-    mutation,
-    resetAll
-  } = useSignUp();
+  const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
   return (
     <>
       <div className="container">
         <form
           onSubmit={onSubmit}
           className={
-            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-[#1b1b19] border-[#292927] border-w rounded-[6px] text-white"
+            "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-white border-[#292927] border-w rounded-[6px]"
           }
         >
           {mutation.isError || mutation.isSuccess ? (
@@ -46,7 +41,7 @@ const Inscription = () => {
                 <label>Votre nom</label>
 
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
                   {...register("lastName")}
                   type="text"
                   placeholder="Entrez votre nom"
@@ -62,7 +57,7 @@ const Inscription = () => {
               <div className="flex flex-col">
                 <label>Votre email</label>
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
                   type="email"
                   {...register("email")}
                   placeholder="Entrez votre email"
@@ -74,7 +69,6 @@ const Inscription = () => {
                 </p>
               </div>
 
-              
               {/* index telephonique */}
               <div className="flex flex-col">
                 <label>
@@ -85,7 +79,7 @@ const Inscription = () => {
                 </label>
                 <div className="flex md:items-center justify-center gap-2 flex-col md:flex-row">
                   <select
-                    className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2 h-[36px] md:w-1/3 max-w-[90vw] md:max-w-full"
+                    className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-1/3 max-w-[90vw] md:max-w-full"
                     {...register("phoneIndex")}
                   >
                     <option value="">Votre pays</option>
@@ -100,14 +94,19 @@ const Inscription = () => {
                     ))}
                   </select>
                   <input
-                    className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 text-white rounded-md my-2 md:w-2/3"
+                    className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-2/3"
                     {...register("phone")}
                     type="number"
                     placeholder="Entrez votre numero"
                   />
                 </div>
               </div>
-
+              <Link
+                href={"/forgot-password"}
+                className="text-center text-blue-400"
+              >
+                Récuperer un mot de passe
+              </Link>
               <div className="flex flex-col my-3">
                 <button
                   type="submit"

@@ -2,15 +2,16 @@ const MENUS = [
   {
     header: true,
     footer: true,
-    label: "Avantages",
-    path: "#avantages",
+    label: "Clients",
+    path: "#clients",
   },
   {
     header: true,
     footer: true,
-    label: "Clients",
-    path: "#clients",
+    label: "Avantages",
+    path: "#avantages",
   },
+
   {
     header: true,
     footer: true,
