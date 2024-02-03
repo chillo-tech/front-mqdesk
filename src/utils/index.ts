@@ -10,4 +10,4 @@ export * from "./getRandomBackground";
 export * from "./truncArray";
 export * from "./ellipsis";
 export * from "./scrollToId";
-export * from "./EventEmitter";
+// export * from "./EventEmitter";
