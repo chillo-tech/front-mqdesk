@@ -12,12 +12,13 @@ const SubmitButton = ({
   return (
     <button
       type={type}
-      className={
-        "select-none text-center px-2 flex mx-auto h-fit py-2 mt-1 justify-items-center justify-center items-center bg-blue-600 shadow-sm rounded-lg md:w-full w-fit"
-      }
       {...rest}
+      className={
+        "text-xl text-white select-none text-center px-2 flex mx-auto h-fit py-2 mt-1 justify-items-center justify-center items-center bg-blue-600 shadow-sm rounded-lg md:w-full w-fit " +
+        (rest.className || "")
+      }
     >
-      <span className="font-extralight text-xl text-white select-none">
+      <span className="font-extralight select-none">
         {text}
       </span>
     </button>

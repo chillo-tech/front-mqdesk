@@ -21,6 +21,7 @@ const Home = () => {
               isError={mutation.isError}
               isSuccess={mutation.isSuccess}
               reloadForm={resetAll}
+              canContact={false}
             />
           ) : (
             <>
@@ -34,8 +35,8 @@ const Home = () => {
                   Discutez avec notre équipe
                 </p>
                 <p>
-                  Obtenez de l'aide pour démarrer, regarder une démo et
-                  trouver la formule adaptée à votre entreprise.
+                  Obtenez de l'aide pour démarrer, regarder une démo et trouver
+                  la formule adaptée à votre entreprise.
                 </p>
               </div>
 
