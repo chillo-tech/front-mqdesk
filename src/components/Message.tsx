@@ -1,9 +1,9 @@
 import React from "react";
 import { SubmitButton } from "./SubmitButton";
-
+import { useRouter } from "next/navigation";
 
 const DEFAULT_ERROR_MESSAGE = `Quelque chose a mal tourne, vous pouvez nous contacter en cliquant
-sur le boutton whatsapp en bas a votre gauche.`;
+sur le boutton en bas a votre droite.`;
 const DEFAULT_SUCCESS_MESSAGE = `Votre requete a bien ete prise en compte, vous serez notifies par
 mail`;
 
@@ -13,6 +13,7 @@ const Message = ({
   isSuccess,
   successMessage = DEFAULT_SUCCESS_MESSAGE,
   reloadForm,
+  canContact = true,
   reloadText = "Recharger le formulaire",
 }: {
   isError: boolean;
@@ -21,7 +22,9 @@ const Message = ({
   successMessage?: string;
   reloadForm?: Function;
   reloadText?: string;
+  canContact?: boolean;
 }) => {
+  const router = useRouter();
   const handleReload = () => {
     if (reloadForm) reloadForm();
   };
@@ -35,13 +38,26 @@ const Message = ({
         <p className="mb-2 text-lg text-center mt-2 flex flex-col gap-2">
           {isError && errorMessage}
           {isSuccess && successMessage}
-          {reloadForm && (
-            <SubmitButton
-              text={reloadText}
-              type="button"
-              onClick={handleReload}
-            />
-          )}
+          <div className="flex flex-col gap-5 items-center">
+            {reloadForm && (
+              <SubmitButton
+                text={reloadText}
+                type="button"
+                onClick={handleReload}
+                className={isError ? "text-sm" : ""}
+              />
+            )}
+            {isError && canContact && (
+              <SubmitButton
+                text="Contactez nous"
+                type="button"
+                onClick={() => {
+                  router.push("/contactez-nous");
+                }}
+                className="text-sm bg-blue-500"
+              />
+            )}
+          </div>
         </p>
       </div>
     </div>
