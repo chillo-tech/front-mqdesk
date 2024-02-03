@@ -1,11 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Message } from "@/components/Message";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ScaleLoader } from "react-spinners";
 import { useForgotPassword } from "./useForgotPassword";
 
-const Home = () => {
+const NewPassword = () => {
   const { register, onSubmit, errors, mutation, resetAll } =
     useForgotPassword();
   return (
@@ -70,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default NewPassword;

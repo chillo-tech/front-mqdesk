@@ -42,7 +42,7 @@ function Hero({}: Props) {
           Utiliser(Gratuitement) RabbitMQ
         </Link>
       </div>
-      <div className="col-span-2 relative h-full py-10">
+      <div className="col-span-2 relative h-full py-10 hidden md:block">
           <Image alt="" src={'/MQDESK.png'} fill={true} objectFit='contain'/>
       </div>
     </section>

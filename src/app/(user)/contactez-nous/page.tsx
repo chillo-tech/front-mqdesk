@@ -5,7 +5,7 @@ import { useContacUs } from "./useContacUs";
 import { ScaleLoader } from "react-spinners";
 import { COUNTRIES_CODES } from "@/utils/data";
 
-const Home = () => {
+const ContactezNous = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useContacUs();
   return (
     <>
@@ -137,4 +137,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ContactezNous;

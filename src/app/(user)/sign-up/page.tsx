@@ -5,7 +5,7 @@ import { COUNTRIES_CODES } from "@/utils/data";
 import { ScaleLoader } from "react-spinners";
 import { useSignUp } from "./useSignUp";
 
-const Home = () => {
+const Inscription = () => {
   const {
     register,
     onSubmit,
@@ -128,4 +128,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Inscription;

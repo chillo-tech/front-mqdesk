@@ -29,7 +29,7 @@ function Tarifs({}: Props) {
         {TARIFS.map((item, index) => (
           <>
             <div
-              key={item.label}
+              key={`mqdesk-tarif-${index}`}
               className={`bg-white mb-3 ${
                 index === 1
                   ? "md:border-l-2 md:border-r-2 md:border-app-blue"
@@ -74,8 +74,8 @@ function Tarifs({}: Props) {
                     {"Contenu de l'offre"}
                   </p>
                   <ul className="list-disc text-md leading-8 mx-6">
-                    {item.content.map((contentItem) => (
-                      <li key={contentItem.label}>{`${contentItem.label}`}</li>
+                    {item.content.map((contentItem, itemContentIndex) => (
+                      <li key={`mqdesk-tarif-content-${itemContentIndex}`}>{`${contentItem.label}`}</li>
                     ))}
                   </ul>
                 </div>
