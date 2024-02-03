@@ -1,36 +1,28 @@
-'use client';
-import { MENUS, scrollToId } from '@/utils';
-import Link from 'next/link';
-import React from 'react';
-import { HiOutlineMenuAlt3 } from 'react-icons/hi';
-import { RxCross1 } from 'react-icons/rx';
+"use client";
+import { MENUS, scrollToId } from "@/utils";
+import Link from "next/link";
+import React from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { RxCross1 } from "react-icons/rx";
+import Logo from "./Logo";
 
 type Props = {};
 
 function Header({}: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const onLinkClick = (link: string) => {
-    setIsOpen(false);
-    scrollToId(link);
-  };
   return (
     <>
       <header
         id="hero"
         className="col-span-12 py-3 md:py-0 flex items-center justify-between w-full container"
       >
-        <Link
-          href="/"
-          className="px-1 md:px-0 py-2 inline-block text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200"
-        >
-          MQ DESK
-        </Link>
+        <Logo />
         <nav className="hidden md:flex text-black">
           {MENUS.filter((item) => item.footer).map((item) => (
             <button
               type="button"
               key={item.label}
-              onClick={() => scrollToId(item.path)}
+              onClick={scrollToId(item.path)}
               className="text-xl font-light rounded-full py-2 px-4 text-gray-900"
             >
               {item.label}
@@ -45,19 +37,21 @@ function Header({}: Props) {
         </Link>
 
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(true)}
           className="md:hidden p-2 rounded-md bg-app-yellow text-app-brown font-semibold"
         >
           <HiOutlineMenuAlt3 className="w-8 h-8" />
         </button>
       </header>
-      <nav className={`${isOpen ? 'block fixed inset-0 bg-white z-50' : 'hidden'}`}>
+      <nav
+        className={`${isOpen ? "block fixed inset-0 bg-white z-50" : "hidden"}`}
+      >
         <>
           {MENUS && MENUS.length ? (
             <ul className="h-full flex flex-col md:flex-row items-center md:justify-center justify-between">
               <li className="md:hidden">
                 <button
-                  onClick={() => setIsOpen(!isOpen)}
+                  onClick={() => setIsOpen(false)}
                   className="rounded-full p-2 absolute top-[5%] border-2 border-app-black"
                 >
                   <RxCross1 />
@@ -68,7 +62,11 @@ function Header({}: Props) {
                   <button
                     type="button"
                     key={item.label}
-                    onClick={() => onLinkClick(item.link)}
+                    onClick={(e) => {
+                      console.log("item.path", item.path);
+                      setIsOpen(false);
+                      scrollToId(item.path)(e);
+                    }}
                     className="text-xl font-light rounded-full py-2 px-4 text-gray-900 block my-1 text-center"
                   >
                     {item.label}
