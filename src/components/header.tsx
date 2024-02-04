@@ -63,7 +63,6 @@ function Header({}: Props) {
                     type="button"
                     key={item.label}
                     onClick={(e) => {
-                      console.log("item.path", item.path);
                       setIsOpen(false);
                       scrollToId(item.path)(e);
                     }}

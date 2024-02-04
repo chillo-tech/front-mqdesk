@@ -11,13 +11,6 @@ import { isAxiosError } from "axios";
 
 const Inscription = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
-
-  console.log(
-    "cond2",
-    mutation.isError &&
-      isAxiosError(mutation.error) &&
-      mutation.error.response?.status !== 406
-  );
   return (
     <>
       <div className="container">
