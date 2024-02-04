@@ -7,6 +7,7 @@ import { useSignUp } from "./useSignUp";
 import Link from "next/link";
 import { SubmitButton } from "@/components/SubmitButton";
 import React from "react";
+import { isAxiosError } from "axios";
 
 const Inscription = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
@@ -19,12 +20,31 @@ const Inscription = () => {
             "max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-white border-[#292927] border-w rounded-[6px]"
           }
         >
-          {mutation.isError || mutation.isSuccess ? (
-            <Message
-              isError={mutation.isError}
-              isSuccess={mutation.isSuccess}
-              reloadForm={resetAll}
-            />
+          {(mutation.isError && !isAxiosError(mutation.error)) ||
+          (mutation.isError &&
+            isAxiosError(mutation.error) &&
+            mutation.error.response?.status !== 406) ||
+          mutation.isSuccess ? (
+            isAxiosError(mutation.error) ? (
+              <Message
+                isError={mutation.isError}
+                isSuccess={mutation.isSuccess}
+                reloadForm={resetAll}
+                canContact={true}
+                errorMessage={
+                  mutation.error.response?.status === 401
+                    ? `<p>Une erreur est survenue <br/> Veuillez nous contacter en utilisant le bouton ci dessous</p>`
+                    : undefined
+                }
+              />
+            ) : (
+              <Message
+                isError={mutation.isError}
+                isSuccess={mutation.isSuccess}
+                reloadForm={resetAll}
+                canContact={false}
+              />
+            )
           ) : (
             <>
               {mutation.isLoading ? (
@@ -37,7 +57,24 @@ const Inscription = () => {
                   Nouveau ? Inscrivez vous!
                 </p>
               </div>
-
+              {mutation.error && isAxiosError(mutation.error) && (
+                <div>
+                  une erreur est survenue{" "}
+                  <p
+                    className={
+                      "flex flex-col md:flex-row justify-between items-center"
+                    }
+                  >
+                    <span>Mot de passe oublié?</span>
+                    <Link
+                      href={"/forgot-password"}
+                      className="text-app-blue underline"
+                    >
+                      Récuperer un mot de passe
+                    </Link>
+                  </p>
+                </div>
+              )}
               {/* nom */}
               <div className="flex flex-col">
                 <label>Votre nom</label>
@@ -48,7 +85,7 @@ const Inscription = () => {
                   type="text"
                   placeholder="Entrez votre nom"
                 />
-                <p className="text-rose-800">
+                <p className="text-rose-800 md:text-center">
                   {errors &&
                     errors.lastName &&
                     "Veuillez nous indiquer votre nom."}
@@ -64,7 +101,7 @@ const Inscription = () => {
                   {...register("email")}
                   placeholder="Entrez votre email"
                 />
-                <p className="text-rose-800">
+                <p className="text-rose-800 md:text-center">
                   {errors &&
                     errors.email &&
                     "Veuillez nous indiquer votre email."}
@@ -100,7 +137,7 @@ const Inscription = () => {
                     placeholder="Entrez votre numero"
                   />
                 </div>
-                <p className="text-rose-800">
+                <p className="text-rose-800 md:text-center">
                   {errors &&
                     errors.phone &&
                     "Veuillez nous indiquer votre numero."}

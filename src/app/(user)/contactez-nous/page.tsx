@@ -6,6 +6,7 @@ import { ScaleLoader } from "react-spinners";
 import { COUNTRIES_CODES } from "@/utils/data";
 import { SubmitButton } from "@/components/SubmitButton";
 import React from "react";
+import { isAxiosError } from "axios";
 
 const ContactezNous = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useContacUs();
@@ -18,12 +19,21 @@ const ContactezNous = () => {
         }
       >
         {mutation.isError || mutation.isSuccess ? (
-          <Message
-            isError={mutation.isError}
-            isSuccess={mutation.isSuccess}
-            reloadForm={resetAll}
-            canContact={false}
-          />
+          isAxiosError(mutation.error) ? (
+            <Message
+              isError={mutation.isError}
+              isSuccess={mutation.isSuccess}
+              reloadForm={resetAll}
+              canContact={false}
+            />
+          ) : (
+            <Message
+              isError={mutation.isError}
+              isSuccess={mutation.isSuccess}
+              reloadForm={resetAll}
+              canContact={false}
+            />
+          )
         ) : (
           <>
             {mutation.isLoading ? (
