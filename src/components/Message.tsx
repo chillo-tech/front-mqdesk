@@ -16,9 +16,9 @@ const Message = ({
   reloadText = "Recharger le formulaire",
 }: {
   isError: boolean;
-  errorMessage?: string;
+  errorMessage?: string | React.ReactElement;
   isSuccess: boolean;
-  successMessage?: string;
+  successMessage?: string | React.ReactElement;
   reloadForm?: Function;
   reloadText?: string;
   canContact?: boolean;
@@ -35,17 +35,32 @@ const Message = ({
         }`}
       >
         <div className="mb-2 text-lg text-center mt-2 flex flex-col gap-2">
-          <div
-            className="text-green-500"
-            dangerouslySetInnerHTML={{
-              __html: `
+          {typeof errorMessage === "string" ? (
+            <div
+              className="text-green-500"
+              dangerouslySetInnerHTML={{
+                __html: `
                 <p class='error-message'>${isError ? errorMessage : ""}</p> 
+              `,
+              }}
+            />
+          ) : (
+            errorMessage
+          )}
+          {typeof successMessage === "string" ? (
+            <div
+              className="text-green-500"
+              dangerouslySetInnerHTML={{
+                __html: `
                 <p class='success-message'>${
                   isSuccess ? successMessage : ""
                 }</p>
               `,
-            }}
-          ></div>
+              }}
+            />
+          ) : (
+            successMessage
+          )}
           <div className="flex flex-col gap-5">
             {reloadForm && (
               <SubmitButton

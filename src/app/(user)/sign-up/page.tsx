@@ -11,6 +11,13 @@ import { isAxiosError } from "axios";
 
 const Inscription = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
+
+  console.log(
+    "cond2",
+    mutation.isError &&
+      isAxiosError(mutation.error) &&
+      mutation.error.response?.status !== 406
+  );
   return (
     <>
       <div className="container">
@@ -32,9 +39,22 @@ const Inscription = () => {
                 reloadForm={resetAll}
                 canContact={true}
                 errorMessage={
-                  mutation.error.response?.status === 401
-                    ? `<p>Une erreur est survenue <br/> Veuillez nous contacter en utilisant le bouton ci dessous</p>`
-                    : undefined
+                  mutation.error.response?.status === 401 ? (
+                    `<p>Une erreur est survenue <br/> Veuillez nous contacter en utilisant le bouton ci dessous 1</p>`
+                  ) : mutation.error.response?.status === 409 ? (
+                    <>
+                      <p className="error-message">
+                        Votre mail est déjà utilisé <br /> Vous pouvez récupérer
+                        un mot de passe en cliquant{" "}
+                        <Link
+                          className="font-extrabold text-app-blue hover:underline"
+                          href="/forgot-password"
+                        >
+                          ici
+                        </Link>
+                      </p>
+                    </>
+                  ) : undefined
                 }
               />
             ) : (

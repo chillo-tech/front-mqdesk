@@ -13,7 +13,7 @@ export const useForgotPassword = () => {
 
   const mutation = useMutation(signIn);
   async function signIn(obj: any) {
-    const res = await axios.post("/api/backend/forgot-password", obj);
+    const res = await axios.post("/api/backend/password", obj);
   }
 
   useEffect(() => {
