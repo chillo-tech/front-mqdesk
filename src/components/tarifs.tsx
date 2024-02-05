@@ -49,13 +49,13 @@ function Tarifs({}: Props) {
               <div className="flex flex-col items-center">
                 <Link
                   href="/sign-up"
-                  className="block bg-app-blue text-slate-50 text-lg md:text-lg front-bolder py-4 md:px-4 px-2 rounded-full text-center"
+                  className="block w-full md:w-fit bg-app-blue text-slate-50 text-lg md:text-lg front-bolder py-4 md:px-4 px-2 rounded-full text-center"
                 >
                   Utiliser(Gratuitement) RabbitMQ
                 </Link>
                 <Link
                   href="/contactez-nous"
-                  className="mt-2 border-b border-app-blue text-app-blue text-lg"
+                  className="mt-2 border-b text-center md:w-fit border-app-blue text-app-blue text-lg"
                 >
                   Contactez nous
                 </Link>
@@ -81,7 +81,7 @@ function Tarifs({}: Props) {
       <div className="container flex items-center justify-center">
         <Link
           href="/sign-up"
-          className="block bg-app-blue text-slate-50 text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
+          className="block w-full text-center md:w-fit bg-app-blue text-slate-50 text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
         >
           Utiliser(Gratuitement) RabbitMQ
         </Link>

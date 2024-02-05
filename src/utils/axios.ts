@@ -1,7 +1,6 @@
 import axios, {AxiosError, AxiosRequestConfig} from "axios";
 
 const axiosInstance = axios.create();
-//instance.defaults.headers.common['Authorization'] = `Bearer ${process.env.BACKOFFICE_API_TOKEN}`;
 axiosInstance.defaults.headers.common["Accept"] = "application/json";
 
 const onRequest = async (

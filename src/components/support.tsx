@@ -24,7 +24,7 @@ function Support({}: Props) {
         <p>{"L'essai de MQDesk est 100 % gratuit."}</p>
         <Link
           href="/contactez-nous"
-          className="mt-6 border text-white border-white hover:bg-white hover:text-app-blue text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
+          className="mt-6 border w-full text-center md:w-fit text-white border-white hover:bg-white hover:text-app-blue text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
         >
           Contactez nous
         </Link>

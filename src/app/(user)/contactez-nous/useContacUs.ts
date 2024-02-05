@@ -6,7 +6,7 @@ import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { ApplicationContext } from "../ApplicationContext";
-import { contacUsSchema } from "./formSchema";
+import { contactUsSchema } from "./formSchema";
 
 export const useContacUs = () => {
   const { setData } = useContext(ApplicationContext);
@@ -36,7 +36,7 @@ export const useContacUs = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(contacUsSchema),
+    resolver: yupResolver(contactUsSchema),
   });
 
   const resetAll = () => {
