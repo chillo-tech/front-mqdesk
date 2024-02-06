@@ -114,9 +114,8 @@ jobs:
             docker compose -f ${{ env.FOLDER }}/docker-compose.yml stop || true
             docker compose -f ${{ env.FOLDER }}/docker-compose.yml rm -f || true
 
-            rm ${{ env.FOLDER }}/.env
-            echo NEXT_PUBLIC_BACKEND_API_KEY=${{ secrets.BACKEND_API_TOKEN }} >> ${{ env.FOLDER }}/.env
-            echo NEXT_PUBLIC_BACKEND_API_SECRET=${{ secrets.BACKEND_API_TOKEN }} >> ${{ env.FOLDER }}/.env
+            echo NEXT_PUBLIC_BACKEND_API_KEY=${{ secrets.NEXT_PUBLIC_BACKEND_API_KEY }} >> ${{ env.FOLDER }}/.env
+            echo NEXT_PUBLIC_BACKEND_API_SECRET=${{ secrets.NEXT_PUBLIC_BACKEND_API_SECRET }} >> ${{ env.FOLDER }}/.env
             echo NEXT_PUBLIC_API_URI=${{ secrets.NEXT_PUBLIC_API_URI }} >> ${{ env.FOLDER }}/.env
 
             sudo docker compose -f ${{ env.FOLDER }}/docker-compose.yml up -d
