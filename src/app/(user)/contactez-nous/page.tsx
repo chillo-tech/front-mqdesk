@@ -4,8 +4,9 @@ import {Message} from "@/components/Message";
 import {useContacUs} from "./useContacUs";
 import {ScaleLoader} from "react-spinners";
 import {COUNTRIES_CODES} from "@/utils/data";
-import {SubmitButton} from '@/components/SubmitButton';
-import React from 'react';
+import {SubmitButton} from "@/components/SubmitButton";
+import React from "react";
+import {isAxiosError} from "axios";
 
 const ContactezNous = () => {
 	const {register, onSubmit, errors, mutation, resetAll} = useContacUs();
@@ -18,12 +19,21 @@ const ContactezNous = () => {
 				}
 			>
 				{mutation.isError || mutation.isSuccess ? (
-					<Message
-						isError={mutation.isError}
-						isSuccess={mutation.isSuccess}
-						reloadForm={resetAll}
-						canContact={false}
-					/>
+					isAxiosError(mutation.error) ? (
+						<Message
+							isError={mutation.isError}
+							isSuccess={mutation.isSuccess}
+							reloadForm={resetAll}
+							canContact={false}
+						/>
+					) : (
+						<Message
+							isError={mutation.isError}
+							isSuccess={mutation.isSuccess}
+							reloadForm={resetAll}
+							canContact={false}
+						/>
+					)
 				) : (
 					<>
 						{mutation.isLoading ? (
@@ -48,14 +58,14 @@ const ContactezNous = () => {
 
 							<input
 								className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
-								{...register("lastName")}
+								{...register("name")}
 								type="text"
 								placeholder="Entrez votre nom"
 							/>
 							<p className="text-rose-800">
 								{errors &&
-									errors.lastName &&
-									"Veuillez nous indiquer notre nom."}
+									errors.name &&
+									"Veuillez nous indiquer votre nom."}
 							</p>
 						</div>
 
@@ -71,7 +81,7 @@ const ContactezNous = () => {
 							<p className="text-rose-800">
 								{errors &&
 									errors.email &&
-									"Veuillez nous indiquer notre email."}
+									"Veuillez nous indiquer votre email."}
 							</p>
 						</div>
 
@@ -104,6 +114,14 @@ const ContactezNous = () => {
 									placeholder="Entrez votre numero"
 								/>
 							</div>
+							<p className="text-rose-800">
+								{errors &&
+									errors.phone &&
+									"Veuillez nous indiquer votre numero."}
+								{errors &&
+									errors.phoneIndex &&
+									"Veuillez nous indiquer votre index telephonique."}
+							</p>
 						</div>
 
 						{/* message */}
@@ -118,10 +136,7 @@ const ContactezNous = () => {
 								{errors && errors.message && "Veuillez entrer votre message"}
 							</p>
 						</div>
-						<SubmitButton
-							text="Transmettre"
-							className="bg-app-blue"
-						/>
+						<SubmitButton text="Transmettre" className="bg-app-blue"/>
 					</>
 				)}
 			</form>

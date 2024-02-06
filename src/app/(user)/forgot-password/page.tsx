@@ -3,8 +3,10 @@
 import {Message} from "@/components/Message";
 import {ScaleLoader} from "react-spinners";
 import {useForgotPassword} from "./useForgotPassword";
-import {SubmitButton} from '@/components/SubmitButton';
-import React from 'react';
+import {SubmitButton} from "@/components/SubmitButton";
+import React from "react";
+import Link from "next/link";
+import {isAxiosError} from "axios";
 
 const NewPassword = () => {
 	const {register, onSubmit, errors, mutation, resetAll} =
@@ -18,12 +20,49 @@ const NewPassword = () => {
 						"max-w-[400px] text-[14px] flex relative flex-col gap-2 font-light infos p-5 bg-white border-[#292927] border-w rounded-[6px]"
 					}
 				>
-					{mutation.isError || mutation.isSuccess ? (
-						<Message
-							isError={mutation.isError}
-							isSuccess={mutation.isSuccess}
-							reloadForm={resetAll}
-						/>
+					{(mutation.isError && !isAxiosError(mutation.error)) ||
+					(mutation.isError &&
+						isAxiosError(mutation.error) &&
+						mutation.error.response?.status !== 406) ||
+					mutation.isSuccess ? (
+						isAxiosError(mutation.error) ? (
+							<Message
+								isError={mutation.isError}
+								isSuccess={mutation.isSuccess}
+								reloadForm={resetAll}
+								canContact={true}
+								errorMessage={
+									mutation.error.response?.status === 401 ? (
+										`<p className="text-red-800">Une erreur est survenue <br/> Veuillez nous contacter en utilisant le bouton ci dessous</p>`
+									) : mutation.error.response?.status === 409 ? (
+										<>
+											<p className="error-message">
+												Votre mail est inconnu <br/> Vous pouvez créer un
+												compte en cliquant{" "}
+												<Link
+													className="font-extrabold text-app-blue hover:underline"
+													href="/sign-up"
+												>
+													ici
+												</Link>
+											</p>
+										</>
+									) : undefined
+								}
+							/>
+						) : (
+							<Message
+								isError={mutation.isError}
+								isSuccess={mutation.isSuccess}
+								reloadForm={resetAll}
+								canContact={false}
+								successMessage={
+									mutation.isSuccess
+										? `Votre requete a bien été prise en compte. Vous serez notifé par mail sous peu.`
+										: undefined
+								}
+							/>
+						)
 					) : (
 						<>
 							{mutation.isLoading ? (

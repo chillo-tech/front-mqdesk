@@ -30,10 +30,7 @@ export default function RootLayout({
               content={data.metaData.description || default_description}
             />
           </head>
-          <body
-            className={`${pjs.className} scroll-smooth  font-sans`}
-            onScroll={(e) => console.log("scroll")}
-          >
+          <body className={`${pjs.className} scroll-smooth  font-sans`}>
             {children}
           </body>
           {process.env.NEXT_PUBLIC_ANALYTICS_KEY && (
