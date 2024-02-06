@@ -1,61 +1,62 @@
 "use client";
 
-import { yupResolver } from "@hookform/resolvers/yup";
+import {yupResolver} from "@hookform/resolvers/yup";
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { useMutation } from "react-query";
-import { ApplicationContext } from "../ApplicationContext";
-import { forgotPasswordSchema } from "./formSchema";
+import {useContext, useEffect, useState} from "react";
+import {useForm} from "react-hook-form";
+import {useMutation} from "react-query";
+import {ApplicationContext} from "../ApplicationContext";
+import {forgotPasswordSchema} from "./formSchema";
 
 export const useForgotPassword = () => {
-  const { setData } = useContext(ApplicationContext);
+	const {setData} = useContext(ApplicationContext);
 
-  const mutation = useMutation(signIn);
-  async function signIn(obj: any) {
-    const res = await axios.post("/api/backend/password", obj);
-  }
+	const mutation = useMutation(signIn);
 
-  useEffect(() => {
-    setData({
-      leftComponent: {
-        description: "Vous recevrez un nouveau mot de passe dans votre mail.",
-        title: `Récuperer un mot de passe`,
-      },
-      metaData: {
-        description: "Powered by chillo.tech",
-        title: "Mot de passe oublié - MQ Desk",
-      },
-    });
-  }, [setData]);
+	async function signIn(obj: any) {
+		const res = await axios.post("/api/backend/new-password", obj);
+	}
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    resolver: yupResolver(forgotPasswordSchema),
-  });
+	useEffect(() => {
+		setData({
+			leftComponent: {
+				description: "Vous recevrez un nouveau mot de passe dans votre mail.",
+				title: `Récuperer un mot de passe`,
+			},
+			metaData: {
+				description: "Powered by chillo.tech",
+				title: "Mot de passe oublié - MQ Desk",
+			},
+		});
+	}, [setData]);
 
-  const resetAll = () => {
-    reset();
-    mutation.reset();
-  };
+	const {
+		register,
+		handleSubmit,
+		formState: {errors},
+		reset,
+	} = useForm({
+		resolver: yupResolver(forgotPasswordSchema),
+	});
 
-  const onSubmitHandler = (data: any) => {
-    mutation.mutateAsync(data);
-  };
+	const resetAll = () => {
+		reset();
+		mutation.reset();
+	};
 
-  const onInvalid = (errors: any) => console.error(errors);
+	const onSubmitHandler = (data: any) => {
+		mutation.mutateAsync(data);
+	};
 
-  const onSubmit = handleSubmit(onSubmitHandler, onInvalid);
+	const onInvalid = (errors: any) => console.error(errors);
 
-  return {
-    register,
-    errors,
-    onSubmit,
-    mutation,
-    resetAll,
-  };
+	const onSubmit = handleSubmit(onSubmitHandler, onInvalid);
+
+	return {
+		register,
+		errors,
+		onSubmit,
+		mutation,
+		resetAll,
+	};
 };
