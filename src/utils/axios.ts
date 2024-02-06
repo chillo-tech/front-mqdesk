@@ -7,7 +7,7 @@ const onRequest = async (
 	config: AxiosRequestConfig
 ): Promise<AxiosRequestConfig> => {
 	const {url = ""} = config;
-	const urlToCall = url.replaceAll("/api/backend", "/api/v1");
+	const urlToCall = url.replaceAll("/api/backend", "/api");
 	console.log('====================================');
 	console.log(process.env);
 	console.log('====================================');
