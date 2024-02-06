@@ -119,4 +119,4 @@ jobs:
             echo NEXT_PUBLIC_API_URI=${{ secrets.NEXT_PUBLIC_API_URI }} >> ${{ env.FOLDER }}/.env
 
             sudo docker compose -f ${{ env.FOLDER }}/docker-compose.yml up -d
-            rm ${{ env.FOLDER }}/.env
+            cat ${{ env.FOLDER }}/.env
