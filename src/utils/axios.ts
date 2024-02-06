@@ -7,19 +7,19 @@ const onRequest = async (
 	config: AxiosRequestConfig
 ): Promise<AxiosRequestConfig> => {
 	const {url = ""} = config;
-	const urlToCall = url.replaceAll("/api/backend", "/backend");
-	console.log('====================================');
-	console.log(process.env);
-	console.log('====================================');
+	const urlToCall = url.replaceAll("/api/backend", "/api");
+console.log('====================================');
+console.log(process.env);
+console.log('====================================');
 
 	const authorization = {
 		"X-API-KEY": process.env.NEXT_PUBLIC_BACKEND_API_KEY,
 		"X-API-SECRET": process.env.NEXT_PUBLIC_BACKEND_API_SECRET
 	};
 
-	console.log('====================================');
-	console.log({authorization});
-	console.log('====================================');
+  console.log('====================================');
+  console.log({authorization});
+  console.log('====================================');
 	return {
 		...config,
 		url: urlToCall,
