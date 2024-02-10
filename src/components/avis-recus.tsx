@@ -9,7 +9,7 @@ function AvisRecus({}: Props) {
       <h2
         className={`${montserrat.className} text-center text-2xl md:text-5xl font-bold py-6`}
       >
-        {"Nos utilisateurs en parlent"}
+        {"Nos utilisateurs donnent leurs avis"}
       </h2>
       <div className="container grid md:grid-cols-3 gap-6 text-md">
         {AVIS.map((item, index) => (
