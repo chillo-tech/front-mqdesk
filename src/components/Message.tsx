@@ -45,7 +45,7 @@ const Message = ({
               }}
             />
           ) : (
-            errorMessage
+            <div className='error-message'>{errorMessage}</div>
           )}
           {typeof successMessage === "string" ? (
             <div
