@@ -66,7 +66,7 @@ const Inscription = () => {
                 </div>
               ) : null}
               <div className="">
-                <p className="mb-2 font-black text-xl text-center mt-2">
+                <p className="mb-2 font-black text-center mt-2">
                   Nouveau ? Inscrivez vous!
                 </p>
               </div>

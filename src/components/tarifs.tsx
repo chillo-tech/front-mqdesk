@@ -2,6 +2,7 @@ import { montserrat } from "@/app/fonts";
 import { TARIFS } from "@/utils";
 import Link from "next/link";
 import React from "react";
+import Action from "./Action";
 
 type Props = {};
 
@@ -9,19 +10,17 @@ function Tarifs({}: Props) {
   return (
     <section
       id="tarifs"
-      className="bg-[#e1eaf4] py-20 md:py-20 text-lg text-light"
+      className="bg-[#e1eaf4] py-10 text-light"
     >
       <div className="container text-center">
-        <h2
-          className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}
-        >
+        <h2 className={`${montserrat.className} text-3xl font-bold text-center`}>
           {"Une tarification transparente."}
         </h2>
-        <p className="md:text-2xl py-2">
+        <p className="py-2">
           {"Choisissez un forfait qui vous convient."}
         </p>
       </div>
-      <div className="container md:py-20 grid md:grid-cols-3 md:px-20">
+      <div className="container md:py10 grid md:grid-cols-3">
         {TARIFS.map((item, index) => (
           <div
             key={item.label + index}
@@ -31,14 +30,14 @@ function Tarifs({}: Props) {
                 : ""
             }`}
           >
-            <div className="pt-6 px-6 pb-4">
-              <h3 className={`${montserrat.className} text-3xl font-bold`}>
+            <div className="pt-6 px-3 pb-4">
+              <h3 className={`${montserrat.className} text-xl font-bold`}>
                 {item.label}
               </h3>
               <p className="text-sm">{item.descriptionOne}</p>
               <p className="text-sm">{item.descriptionTwo}</p>
               <p
-                className={`${montserrat.className} text-3xl font-bold my-14 leading-[2srem]`}
+                className={`${montserrat.className} text-lg font-bold my-14 leading-[2srem]`}
               >
                 {item.content ? (
                   item.price
@@ -49,13 +48,13 @@ function Tarifs({}: Props) {
               <div className="flex flex-col items-center">
                 <Link
                   href="/sign-up"
-                  className="block w-full md:w-fit bg-app-blue text-slate-50 text-lg md:text-lg front-bolder py-4 md:px-4 px-2 rounded-full text-center"
+                  className="block w-full md:w-fit bg-app-blue text-slate-50 front-bolder py-2 text-sm px-4 rounded-full text-center"
                 >
                   Utiliser(Gratuitement) RabbitMQ
                 </Link>
                 <Link
                   href="/contactez-nous"
-                  className="mt-2 border-b text-center md:w-fit border-app-blue text-app-blue text-lg"
+                  className="mt-2 border-b text-center md:w-fit border-app-blue text-app-blue"
                 >
                   Contactez nous
                 </Link>
@@ -63,10 +62,10 @@ function Tarifs({}: Props) {
             </div>
             {item.content ? (
               <div className="pt-6 pb-8 px-6 border-t border-app-blue">
-                <p className={`${montserrat.className} text-xl font-bold mb-2`}>
+                <p className={`${montserrat.className} font-bold mb-2`}>
                   {"Contenu de l'offre"}
                 </p>
-                <ul className="list-disc text-md leading-8 mx-6">
+                <ul className="list-disc leading-8 mx-6">
                   {item.content.map((contentItem, idx) => (
                     <li
                       key={contentItem.label + idx}
@@ -78,14 +77,7 @@ function Tarifs({}: Props) {
           </div>
         ))}
       </div>
-      <div className="container flex items-center justify-center">
-        <Link
-          href="/sign-up"
-          className="block w-full text-center md:w-fit bg-app-blue text-slate-50 text-lg md:text-xl front-bolder py-4 md:px-10 px-8 rounded-full inline-block"
-        >
-          Utiliser(Gratuitement) RabbitMQ
-        </Link>
-      </div>
+      <Action />
     </section>
   );
 }

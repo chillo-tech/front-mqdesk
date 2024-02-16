@@ -1,63 +1,49 @@
-import { montserrat } from "@/app/fonts";
-import { CCM } from "@/utils";
-import Image from "next/image";
-import Link from "next/link";
+import { montserrat } from '@/app/fonts';
+import { CCM } from '@/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import Action from './Action';
 
 type Props = {};
 
 function CommentCaMarche({}: Props) {
   return (
-    <section
-      id="how-it-works"
-      className="bg-gray-200 py-10 md:py-20 text-lg text-light"
-    >
+    <section id="how-it-works" className="bg-gray-200 py-10 text-lg text-light">
       <div className="container text-center">
-        <h2
-          className={`${montserrat.className} text-3xl md:text-5xl font-bold text-center`}
-        >
-          {"Obtenez un compte"}
+        <h2 className={`${montserrat.className} text-3xl font-bold text-center`}>
+          {'Obtenez un compte'}
         </h2>
-        <p className="md:text-2xl py-2">{"Utilisez RabbitMQ"}</p>
+        <p className="md:text-lg py-2">{'Utilisez RabbitMQ'}</p>
       </div>
-      <div className="container md:py-10 grid md:grid-cols-3 gap-4">
+      <div className="container md:py-4 grid md:grid-cols-3 gap-4">
         {CCM.map((item) => (
-          <div
-            key={item.label}
-            className="bg-white grid grid-cols-5 rounded-xl"
-          >
-            <div className="image relative h-42 col-span-2">
-              <Image
-                alt={`MQDesk ${item.label} ${item.descriptionOne} ${item.descriptionTwo}`}
-                fill={true}
-                sizes="100%"
-                src={item.image}
-                style={{
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-            <div className={`mb-3 text-center col-span-3 h-full`}>
-              <div className="pt-6 px-3 pb-4">
-                <h3
-                  className={`${montserrat.className} text-3xl font-bold mb-3`}
-                >
-                  {item.label}
-                </h3>
-                <p className="text-sm">{item.descriptionOne}</p>
-                <p className="text-sm">{item.descriptionTwo}</p>
+          <div key={item.label} className="bg-white rounded-xl">
+            <h3 className={`${montserrat.className} text-lg font-bold text-center mt-2`}>
+              {item.label}
+            </h3>
+            <div className="grid grid-cols-5 ">
+              <div className="image relative col-span-2 flex items-center justify-center">
+                <Image
+                  alt={`MQDesk ${item.label} ${item.descriptionOne} ${item.descriptionTwo}`}
+                  width={80}
+                  height={80}
+                  src={item.image}
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                />
+              </div>
+              <div className={`text-center col-span-3 h-full`}>
+                <div className="py-2 px-1">
+                  <p className="text-xs">{item.descriptionOne}</p>
+                  <p className="text-xs">{item.descriptionTwo}</p>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="container flex items-center justify-center py-3">
-        <Link
-          href="/sign-up"
-          className="block w-full text-center md:w-fit bg-app-blue text-slate-50 text-lg md:text-xl front-bolder py-3 md:px-10 px-8 rounded-full inline-block"
-        >
-          Utiliser(Gratuitement) RabbitMQ
-        </Link>
-      </div>
+      <Action />
     </section>
   );
 }

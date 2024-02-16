@@ -8,18 +8,18 @@ const Footer = (props: Props) => {
   return (
     <footer className="border-t border-slate-300 col-span-12 bg-gray-800 text-slate-300 pb-20 pt-10">
       <div className="container text-center">
-        <h1
-          className={`${montserrat.className} text-2xl md:text-5xl font-bold mb-4 flex flex-col items-center`}
-        >
+       
+      <h2 className={`${montserrat.className} text-3xl font-bold text-center font-bold mb-4 flex flex-col items-center`}>
+        
           <span>{"Votre cluster RabitMQ est"}</span>
           <span>{"entre de bonnes avec nous."}</span>
-        </h1>
-        <p className="text-md md:text-xl py-1 font-light">
+        </h2>
+        <p className="py-1 font-light">
           {
             "Découvrez comment vous et votre équipe pouvez profiter de notre infrastructure et faire avancer vos projets."
           }
         </p>
-        <p className="text-md md:text-xl py-1 font-light">
+        <p className="py-1 font-light">
           {
             "On s'occupe de l'infrastructure et vous vous occupez de vos projets"
           }

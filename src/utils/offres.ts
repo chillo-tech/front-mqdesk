@@ -1,6 +1,6 @@
 const OFFRES = [
   {
-    label: "Implémentation somplifiée",
+    label: "Implémentation simplifiée",
     descriptionOne: "Implémentation simplifiée, permettant aux entreprises de déployer rapidement une solution de messagerie robuste sans tracas",
     descriptionTwo: "MQDesk configure et la gère de votre cluster RabbitMQ réduisant ainsi les délais de mise en œuvre",
     image: '/offre/serveurs.png'
