@@ -1,11 +1,11 @@
 "use client";
 
-
 const scrollToId =
-  (id: string) => (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
+  (id: string, scrollFn?: Function) =>
+  (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (scrollFn) scrollFn();
+    e?.preventDefault();
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
 export { scrollToId };
-
