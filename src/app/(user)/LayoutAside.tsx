@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const LayoutAside = ({ data }: { data: DataType }) => {
   return (
-    <aside className="container px-3 dark:text-white max-w-[500px]">
+    <aside className="container px-3 max-w-[500px]">
       <div className="mt-1 font-extralight infos bg--900 px-2 flex flex-col grow">
         <Logo />
         <h2

@@ -93,7 +93,7 @@ const Inscription = () => {
                 <label>Votre nom</label>
 
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2"
                   {...register("lastName")}
                   type="text"
                   placeholder="Entrez votre nom"
@@ -109,7 +109,7 @@ const Inscription = () => {
               <div className="flex flex-col">
                 <label>Votre email</label>
                 <input
-                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
+                  className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2"
                   type="email"
                   {...register("email")}
                   placeholder="Entrez votre email"
@@ -129,7 +129,7 @@ const Inscription = () => {
                 </label>
                 <div className="flex md:items-center justify-center gap-2 flex-col md:flex-row">
                   <select
-                    className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-1/3 max-w-[90vw] md:max-w-full"
+                    className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2 md:w-1/3 max-w-[90vw] md:max-w-full"
                     {...register("phoneIndex")}
                   >
                     <option value="">Votre pays</option>
@@ -144,7 +144,7 @@ const Inscription = () => {
                     ))}
                   </select>
                   <input
-                    className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-2/3"
+                    className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2 md:w-2/3"
                     {...register("phone")}
                     type="number"
                     placeholder="Entrez votre numero"
