@@ -34,7 +34,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
 					status === 401 ||
 					(response && response.status && response.status === 401)
 				) {
-					console.log("data error", error.response?.data?.error);
 					res.status(401).json({message: "Veuillez vous connecter"});
 					return;
 				}
@@ -42,7 +41,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
 					status === 403 ||
 					(response && response.status && response.status === 403)
 				) {
-					console.log("data error", error.response);
 					res.status(401).json(error.response);
 					return;
 				}
