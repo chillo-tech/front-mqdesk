@@ -81,7 +81,7 @@ const NewPassword = () => {
 							<div className="flex flex-col">
 								<label>Votre email</label>
 								<input
-									className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
+									className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2"
 									type="email"
 									{...register("email")}
 									placeholder="Entrez votre email"

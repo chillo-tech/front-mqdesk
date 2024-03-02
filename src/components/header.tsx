@@ -23,7 +23,7 @@ function Header({}: Props) {
               type="button"
               key={item.label}
               onClick={scrollToId(item.path)}
-              className="text-xl font-light rounded-full py-2 px-4 text-gray-900"
+              className="font-light rounded-full py-2 px-4 text-gray-900"
             >
               {item.label}
             </button>
@@ -66,7 +66,7 @@ function Header({}: Props) {
                       setIsOpen(false);
                       scrollToId(item.path)(e);
                     }}
-                    className="text-xl font-light rounded-full py-2 px-4 text-gray-900 block my-1 text-center"
+                    className="font-light rounded-full py-2 px-4 text-gray-900 block my-1 text-center"
                   >
                     {item.label}
                   </button>

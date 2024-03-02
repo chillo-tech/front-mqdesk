@@ -5,13 +5,11 @@ type Props = {};
 
 function AvisRecus({}: Props) {
   return (
-    <section id="avis" className="py-10 md:py-10 text-lg text-light">
-      <h2
-        className={`${montserrat.className} text-center text-2xl md:text-5xl font-bold py-6`}
-      >
-        {"Nos utilisateurs en parlent"}
+    <section id="avis" className="py-10 md:py-10 text-light">
+        <h2 className={`${montserrat.className} text-3xl font-bold text-center`}>
+        {"Nos utilisateurs donnent leurs avis"}
       </h2>
-      <div className="container grid md:grid-cols-3 gap-6 text-md">
+      <div className="container grid md:grid-cols-3 gap-6 mt-4">
         {AVIS.map((item, index) => (
           <article
             key={`article-${index}`}

@@ -9,10 +9,10 @@ type Props = {
 function Clients({ classes }: Props) {
   return (
     <section className={`${classes}`} id="clients">
-      <div className="container flex flex-col md:flex-row items-center md:gap-8 gap-4 md:py-10 py-6">
-        <h3 className="text-lg">Ils nous font confiance</h3>
+      <div className="container flex flex-col md:flex-row items-center gap-4 py-6">
+        <h3>Ils nous font confiance</h3>
         <nav
-          className={`flex flex-col md:flex-row md:col-span-2 uppercase md:gap-8 ${montserrat.className} text-2xl md:text-3xl font-bold`}
+          className={`flex flex-col md:flex-row md:col-span-2 uppercase ${montserrat.className} text-2xl font-bold`}
         >
           {ENTREPRISES.map((item) => (
             <span

@@ -9,7 +9,15 @@ const config: Config = {
 	],
 	theme: {
 		container: {
-			center: true
+			center: true,
+      padding: '1rem',
+      screens: {
+        sm: '600px',
+        md: '728px',
+        lg: '984px',
+        xl: '1000px',
+        '2xl': '1000px',
+      },
 		},
 		extend: {
 			colors: {

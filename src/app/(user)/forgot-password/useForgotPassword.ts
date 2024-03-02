@@ -2,7 +2,8 @@
 
 import {yupResolver} from "@hookform/resolvers/yup";
 import axios from "axios";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect} from "react";
+
 import {useForm} from "react-hook-form";
 import {useMutation} from "react-query";
 import {ApplicationContext} from "../ApplicationContext";

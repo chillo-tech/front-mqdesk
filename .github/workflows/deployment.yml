@@ -6,13 +6,12 @@ env:
   FOLDER: /opt/applications/mqdesk/front-mqdesk
   IMAGE: front-mqdesk
   IMAGE_VERSION: latest
-permissions:
-  contents: read
 
 jobs:
   create-folder:
     name: Create folder
     runs-on: ubuntu-latest
+
     steps:
       - name: Create folder
         uses: appleboy/ssh-action@v0.1.4
@@ -43,13 +42,17 @@ jobs:
 
   dockerize:
     runs-on: ubuntu-latest
+
     steps:
       - name: Create folder
         run: mkdir -p /tmp
+
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+
       - name: Build and export
         uses: docker/build-push-action@v5
         with:
@@ -114,10 +117,9 @@ jobs:
             docker compose -f ${{ env.FOLDER }}/docker-compose.yml stop || true
             docker compose -f ${{ env.FOLDER }}/docker-compose.yml rm -f || true
 
-            rm ${{ env.FOLDER }}/.env
-            echo NEXT_PUBLIC_BACKEND_API_KEY=${{ secrets.BACKEND_API_TOKEN }} >> ${{ env.FOLDER }}/.env
-            echo NEXT_PUBLIC_BACKEND_API_SECRET=${{ secrets.BACKEND_API_TOKEN }} >> ${{ env.FOLDER }}/.env
+            echo NEXT_PUBLIC_BACKEND_API_KEY=${{ secrets.NEXT_PUBLIC_BACKEND_API_KEY }} >> ${{ env.FOLDER }}/.env
+            echo NEXT_PUBLIC_BACKEND_API_SECRET=${{ secrets.NEXT_PUBLIC_BACKEND_API_SECRET }} >> ${{ env.FOLDER }}/.env
             echo NEXT_PUBLIC_API_URI=${{ secrets.NEXT_PUBLIC_API_URI }} >> ${{ env.FOLDER }}/.env
 
             sudo docker compose -f ${{ env.FOLDER }}/docker-compose.yml up -d
-            rm ${{ env.FOLDER }}/.env
+            cat ${{ env.FOLDER }}/.env

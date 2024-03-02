@@ -7,11 +7,15 @@ import {COUNTRIES_CODES} from "@/utils/data";
 import {SubmitButton} from "@/components/SubmitButton";
 import React from "react";
 import {isAxiosError} from "axios";
+import Footer from "@/components/footer";
+import WhatsappButton from "@/components/WhatsappButton";
+import { pjs } from "@/app/fonts";
 
 const ContactezNous = () => {
 	const {register, onSubmit, errors, mutation, resetAll} = useContacUs();
 	return (
-		<div className="container px-5 py-5 text-xl">
+    <>
+		<div className={`${pjs.className} text-xl`}>
 			<form
 				onSubmit={onSubmit}
 				className={
@@ -23,6 +27,7 @@ const ContactezNous = () => {
 						<Message
 							isError={mutation.isError}
 							isSuccess={mutation.isSuccess}
+              successMessage= {"Nous avons reçu votre message; <br/> Nous allons revenir vers vous assez vite"}
 							reloadForm={resetAll}
 							canContact={false}
 						/>
@@ -30,6 +35,7 @@ const ContactezNous = () => {
 						<Message
 							isError={mutation.isError}
 							isSuccess={mutation.isSuccess}
+              successMessage= {"Nous avons reçu votre message; <br/> Nous allons revenir vers vous assez vite"}
 							reloadForm={resetAll}
 							canContact={false}
 						/>
@@ -57,7 +63,7 @@ const ContactezNous = () => {
 							<label>Votre nom</label>
 
 							<input
-								className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
+								className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2"
 								{...register("name")}
 								type="text"
 								placeholder="Entrez votre nom"
@@ -73,7 +79,7 @@ const ContactezNous = () => {
 						<div className="flex flex-col ">
 							<label>Votre email</label>
 							<input
-								className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2"
+								className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2"
 								type="email"
 								{...register("email")}
 								placeholder="Entrez votre email"
@@ -93,7 +99,7 @@ const ContactezNous = () => {
 							</label>
 							<div className="flex md:items-center justify-center gap-2 flex-col md:flex-row">
 								<select
-									className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-1/3 max-w-[90vw] md:max-w-full"
+									className="px-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2 md:w-1/3 max-w-[90vw] md:max-w-full"
 									{...register("phoneIndex")}
 								>
 									<option value="">Votre pays</option>
@@ -108,7 +114,7 @@ const ContactezNous = () => {
 									))}
 								</select>
 								<input
-									className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md my-2 md:w-2/3"
+									className="p-2 h-[32px] bg-transparent border border-[#292927] outline-blue-500  rounded-md my-2 md:w-2/3"
 									{...register("phone")}
 									type="number"
 									placeholder="Entrez votre numero"
@@ -128,7 +134,7 @@ const ContactezNous = () => {
 						<div className="flex flex-col">
 							<label>Votre message</label>
 							<textarea
-								className="my-2 py-1 px-2 bg-transparent border border-[#292927] outline-blue-500 dark:text-white rounded-md"
+								className="my-2 py-1 px-2 bg-transparent border border-[#292927] outline-blue-500  rounded-md"
 								{...register("message")}
 								rows={4}
 							/>
@@ -139,8 +145,19 @@ const ContactezNous = () => {
 						<SubmitButton text="Transmettre" className="bg-app-blue"/>
 					</>
 				)}
+        <p className="flex gap-3 text-app-blue items-center">
+          <span className="flex-1 h-px bg-app-blue items-center">
+            
+          </span>
+              <span className="flex-none"> OU </span>
+          <span className="flex-1 h-px bg-app-blue items-center">
+            
+          </span>
+        </p>
+          <WhatsappButton />
 			</form>
 		</div>
+    </>
 	);
 };
 
