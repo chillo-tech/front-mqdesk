@@ -44,14 +44,8 @@ const Footer = (props: Props) => {
         </div>
         <div></div>
         <div className="flex flex-col md:flex-row items-center justify-end gap-4 mt-4 md:mt-0">
-          <Link href="/" className="px-2">
-            Prix
-          </Link>
           <Link href="/sign-up" className="px-2">
             Commencer
-          </Link>
-          <Link href="/" className="px-2">
-            Support
           </Link>
           <Link href="/contactez-nous" className="px-2">
             Contact
