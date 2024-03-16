@@ -8,6 +8,7 @@ import Link from "next/link";
 import { SubmitButton } from "@/components/SubmitButton";
 import React from "react";
 import { isAxiosError } from "axios";
+import { siteLinks } from "@/data/sitesLinks";
 
 const Inscription = () => {
   const { register, onSubmit, errors, mutation, resetAll } = useSignUp();
@@ -41,7 +42,7 @@ const Inscription = () => {
                         un mot de passe en cliquant{" "}
                         <Link
                           className="font-extrabold text-app-blue hover:underline"
-                          href="/forgot-password"
+                          href={`${siteLinks["forgot-password"].host}${siteLinks["forgot-password"].path}`}
                         >
                           ici
                         </Link>
@@ -80,7 +81,7 @@ const Inscription = () => {
                   >
                     <span>Mot de passe oublié?</span>
                     <Link
-                      href={"/forgot-password"}
+                      href={`${siteLinks["forgot-password"].host}${siteLinks["forgot-password"].path}`}
                       className="text-app-blue underline"
                     >
                       Récuperer un mot de passe
@@ -169,7 +170,7 @@ const Inscription = () => {
               >
                 <span>Mot de passe oublié?</span>
                 <Link
-                  href={"/forgot-password"}
+                  href={`${siteLinks["forgot-password"].host}${siteLinks["forgot-password"].path}`}
                   className="text-app-blue underline"
                 >
                   Récuperer un mot de passe
