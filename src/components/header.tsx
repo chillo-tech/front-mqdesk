@@ -5,6 +5,7 @@ import React from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import Logo from "./Logo";
+import { siteLinks } from "@/data/sitesLinks";
 
 type Props = {};
 
@@ -30,7 +31,7 @@ function Header({}: Props) {
           ))}
         </nav>
         <Link
-          href="/sign-up"
+          href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
           className="hidden md:block bg-app-blue text-slate-50 text-lg front-bolder py-2 px-6 rounded-full"
         >
           Utiliser RabbitMQ
@@ -73,7 +74,7 @@ function Header({}: Props) {
                 ))}
               </div>
               <Link
-                href="/sign-up"
+                href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
                 className="bg-app-blue text-slate-50 text-lg front-bolder py-2 px-6 rounded-full mb-32"
               >
                 Utiliser RabbitMQ

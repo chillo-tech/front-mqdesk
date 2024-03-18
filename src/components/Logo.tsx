@@ -18,7 +18,7 @@ const Logo = () => {
       />
       <Link
         href="/"
-        className="px-1 md:px-0 py-2 inline-block text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200"
+        className="px-1 md:px-0 py-2 inline-block text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
       >
         MQ DESK
       </Link>

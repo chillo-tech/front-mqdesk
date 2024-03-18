@@ -31,16 +31,3 @@ export default function Home() {
     </main>
   );
 }
-/*
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col relative">
-      <Header />
-      <Hero />
-      <Clients classes="text-app-blue bg-white"/>
-      <Footer />
-    
-    </main>
-  );
-}
-*/

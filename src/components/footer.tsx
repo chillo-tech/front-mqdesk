@@ -1,4 +1,6 @@
 import { montserrat } from "@/app/fonts";
+import { siteLinks } from "@/data/sitesLinks";
+import { scrollToId } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -8,11 +10,10 @@ const Footer = (props: Props) => {
   return (
     <footer className="border-t border-slate-300 col-span-12 bg-gray-800 text-slate-300 pb-20 pt-10">
       <div className="container text-center">
-       
-      <h2 className={`${montserrat.className} text-3xl font-bold text-center font-bold mb-4 flex flex-col items-center`}>
-        
-          <span>{"Votre cluster RabitMQ est"}</span>
-          <span>{"entre de bonnes avec nous."}</span>
+        <h2
+          className={`${montserrat.className} text-3xl font-bold text-center font-bold mb-4 flex flex-col items-center`}
+        >
+          MQ DESK - votre saas pour rabbitmq hébergé
         </h2>
         <p className="py-1 font-light">
           {
@@ -27,7 +28,7 @@ const Footer = (props: Props) => {
       </div>
       <p className="flex items-center justify-center py-8">
         <Link
-          href="/sign-up"
+          href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
           className={`${montserrat.className} text-center hover:text-gray-800 hover:bg-slate-300 text-2xl font-bold py-3 mx-4 md:mx-0 md:py-6 md:px-20 border border-slate-300 rounded-md flex flex-col items-center`}
         >
           Utiliser(Gratuitement) RabbitMQ
@@ -44,10 +45,22 @@ const Footer = (props: Props) => {
         </div>
         <div></div>
         <div className="flex flex-col md:flex-row items-center justify-end gap-4 mt-4 md:mt-0">
-          <Link href="/sign-up" className="px-2">
+          <Link href="/" className="px-2">
+            Prix
+          </Link>
+          <Link
+            href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
+            className="px-2"
+          >
             Commencer
           </Link>
-          <Link href="/contactez-nous" className="px-2">
+          <button className="px-2" onClick={scrollToId("support")}>
+            Support
+          </button>
+          <Link
+            href={`${siteLinks["contact-us"].host}${siteLinks["contact-us"].path}`}
+            className="px-2"
+          >
             Contact
           </Link>
         </div>

@@ -25,7 +25,7 @@ export const useForgotPassword = () => {
 				title: `Récuperer un mot de passe`,
 			},
 			metaData: {
-				description: "Powered by chillo.tech",
+				description: "Mot de passe oublié pour votre compte MQ-DESK? Modifiez-le sur cette page",
 				title: "Mot de passe oublié - MQ Desk",
 			},
 		});

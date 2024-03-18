@@ -44,7 +44,7 @@ export const useSignUp = () => {
 				title: `Créez votre compte`,
 			},
 			metaData: {
-				description: "Powered by chillo.tech",
+				description: "Créez un compte sur MQ-DESK votre SaaS hébergé RabbitMQ  pour une gestion efficace des messages dans vos projets.",
 				title: "Sign in - MQ Desk",
 			},
 		});

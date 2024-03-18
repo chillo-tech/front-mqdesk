@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mqdesk.io
+
+# Sitemaps
+Sitemap: https://mqdesk.io/sitemap.xml
