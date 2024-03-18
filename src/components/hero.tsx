@@ -1,4 +1,5 @@
 import { montserrat } from "@/app/fonts";
+import { siteLinks } from "@/data/sitesLinks";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -40,7 +41,7 @@ function Hero({}: Props) {
           </span>
         </p>
         <Link
-          href="/sign-up"
+          href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
           className="block w-full text-center md:w-fit bg-app-blue text-slate-50 front-bolder py-2 md:px-10 px-8 rounded-full inline-block"
         >
           Utiliser(Gratuitement) RabbitMQ

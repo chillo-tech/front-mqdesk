@@ -3,22 +3,20 @@ import { TARIFS } from "@/utils";
 import Link from "next/link";
 import React from "react";
 import Action from "./Action";
+import { siteLinks } from "@/data/sitesLinks";
 
 type Props = {};
 
 function Tarifs({}: Props) {
   return (
-    <section
-      id="tarifs"
-      className="bg-[#e1eaf4] py-10 text-light"
-    >
+    <section id="tarifs" className="bg-[#e1eaf4] py-10 text-light">
       <div className="container text-center">
-        <h2 className={`${montserrat.className} text-3xl font-bold text-center`}>
+        <h2
+          className={`${montserrat.className} text-3xl font-bold text-center`}
+        >
           {"Une tarification transparente."}
         </h2>
-        <p className="py-2">
-          {"Choisissez un forfait qui vous convient."}
-        </p>
+        <p className="py-2">{"Choisissez un forfait qui vous convient."}</p>
       </div>
       <div className="container md:py10 grid md:grid-cols-3">
         {TARIFS.map((item, index) => (
@@ -47,13 +45,13 @@ function Tarifs({}: Props) {
               </p>
               <div className="flex flex-col items-center">
                 <Link
-                  href="/sign-up"
+                  href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
                   className="block w-full md:w-fit bg-app-blue text-slate-50 front-bolder py-2 text-sm px-4 rounded-full text-center"
                 >
                   Utiliser(Gratuitement) RabbitMQ
                 </Link>
                 <Link
-                  href="/contactez-nous"
+                  href={`${siteLinks["contact-us"].host}${siteLinks["contact-us"].path}`}
                   className="mt-2 border-b text-center md:w-fit border-app-blue text-app-blue"
                 >
                   Contactez nous

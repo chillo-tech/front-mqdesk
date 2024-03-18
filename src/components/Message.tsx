@@ -1,6 +1,7 @@
 import React from "react";
 import { SubmitButton } from "./SubmitButton";
 import { useRouter } from "next/navigation";
+import { siteLinks } from "@/data/sitesLinks";
 
 const DEFAULT_ERROR_MESSAGE = `Une erreur est survenue, veuillez nous contacter en cliquant
 sur le boutton ci-dessous`;
@@ -75,7 +76,7 @@ const Message = ({
                 text="Contactez nous"
                 type="button"
                 onClick={() => {
-                  router.push("/contactez-nous");
+                  router.push(`${siteLinks["contact-us"].host}${siteLinks["contact-us"].path}`);
                 }}
                 className="bg-app-yellow !text-app-blue"
               />
