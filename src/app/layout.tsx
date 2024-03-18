@@ -8,7 +8,7 @@ import useLayout from "./(user)/useLayout";
 import ApplicationProvider from "./ApplicationProvider";
 
 const default_description =
-  "Optimisez les performances de vos applications avec MQ Desk, la solution d'hébergement RabbitMQ de pointe. Notre service offre une plateforme robuste et fiable pour la gestion des messages, garantissant une communication efficace entre les composants de votre application. Avec une infrastructure hautement disponible, MQ Desk assure une intégration transparente de RabbitMQ, libérant ainsi votre équipe de développement des préoccupations liées à l'infrastructure";
+  "Notre solution rabbitmq hébergé vous permet d'optimiser la communication au sein de vos projets. MQ-DESK offre une plateforme robuste et fiable pour la gestion des messages et une communication efficace entre les composants de votre application.";
 
 const default_title = "MQ Desk: rabbitmq hébergé pour vos applications";
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   const { data, setData } = useLayout();
 
   return (
-    <html lang="en">
+    <html lang="fr">
       <ApplicationProvider>
         <ApplicationContext.Provider value={{ data, setData }}>
           <head>

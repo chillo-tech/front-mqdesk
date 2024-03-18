@@ -1,4 +1,5 @@
 "use client";
+import { siteLinks } from "@/data/sitesLinks";
 import { useFloatingFooter } from "@/hooks/useFloatingFooter";
 import { MENUS, scrollToId } from "@/utils";
 import { Emitter } from "@/utils/EventEmitter";
@@ -46,7 +47,7 @@ export const FloatingFooter = (props: Props) => {
             </button>
           ))}
           <Link
-            href="/sign-up"
+            href={`${siteLinks["sign-up"].host}${siteLinks["sign-up"].path}`}
             className="bg-gray-700 font-extralight rounded-full py-3 px-5 hover:bg-slate-100 hover:text-gray-900"
           >
             Sign up
