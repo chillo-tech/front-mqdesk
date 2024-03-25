@@ -1,3 +1,4 @@
+"use client";
 import { montserrat } from "@/app/fonts";
 import { siteLinks } from "@/data/sitesLinks";
 import { scrollToId } from "@/utils";
@@ -54,7 +55,7 @@ const Footer = (props: Props) => {
           >
             Commencer
           </Link>
-          <button className="px-2" onClick={scrollToId("support")}>
+          <button className="px-2" onClick={() => scrollToId("support")}>
             Support
           </button>
           <Link

@@ -10,14 +10,17 @@ const config: Config = {
 	theme: {
 		container: {
 			center: true,
-      padding: '1rem',
-      screens: {
-        sm: '600px',
-        md: '728px',
-        lg: '984px',
-        xl: '1000px',
-        '2xl': '1000px',
-      },
+        // or have default horizontal padding
+        padding: '1rem',
+
+        // default breakpoints but with 40px removed
+        screens: {
+          sm: '600px',
+          md: '728px',
+          lg: '984px',
+          xl: '1240px',
+          '2xl': '1240px',
+        },
 		},
 		extend: {
 			colors: {
